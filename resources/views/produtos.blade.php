@@ -51,7 +51,7 @@
                     <div class="form-group">
                         <label for="precoProduto" class="control-label">Preço</label>
                         <div class="input-group">
-                            <input type="number" class="form-control" id="precoProduto" placeholder="Preço do produto">
+                            <input type="Float" class="form-control" id="precoProduto" placeholder="Preço do produto">
                         </div>
                     </div>
                     
@@ -132,10 +132,10 @@
             "<td>" + p.id + "</td>" +
             "<td>" + p.nome + "</td>" +
             "<td>" + p.estoque + "</td>" +
-            "<td>" + p.preco + "</td>" +
+            "<td id='preco'>" + p.preco + "</td>" +
             "<td>" + p.classificacao + "</td>" +
             "<td>" + p.url + "</td>" +
-            "<td>" + p.categoria_id + "</td>" +
+            "<td>" + p.categoria.nome+ "</td>" +
             "<td>" +
               '<button class="btn btn-sm btn-primary" onclick="editar(' + p.id + ')"> Editar </button> ' +
               '<button class="btn btn-sm btn-danger" onclick="remover(' + p.id + ')"> Apagar </button> ' +
@@ -180,6 +180,7 @@
     
     function carregarProdutos() {
         $.getJSON('/api/produtos', function(produtos) { 
+            // console.log(produtos);
             for(i=0;i<produtos.length;i++) {
                 linha = montarLinha(produtos[i]);
                 $('#tabelaProdutos>tbody').append(linha);
@@ -201,6 +202,7 @@
             linha = montarLinha(produto);
             $('#tabelaProdutos>tbody').append(linha);            
         });
+      
     }
     
     function salvarProduto() {
@@ -231,7 +233,7 @@
                     e[0].cells[3].textContent = prod.preco;
                     e[0].cells[4].textContent = prod.classificacao;
                     e[0].cells[5].textContent = prod.url;
-                    e[0].cells[6].textContent = prod.categoria_id;
+                    e[0].cells[6].textContent = prod.categoria.nome;
                 }
             },
             error: function(error) {
@@ -254,6 +256,9 @@
         carregarCategorias();
         carregarProdutos();
     })
+    
+    
+ 
     
 </script>
 

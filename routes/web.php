@@ -29,3 +29,4 @@ Route::get('/categorias/editar/{id}', 'ControladorCategoria@edit');
 Route::get('/sl/editar/{id}', 'SlController@edit');
 Route::post('/categorias/{id}', 'ControladorCategoria@update');
 Route::post('/sl/{id}', 'SlController@update');
+Route::get('/test', 'ControladorProduto@index');

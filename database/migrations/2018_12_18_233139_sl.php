@@ -13,7 +13,7 @@ class Sl extends Migration
      */
     public function up()
     {
-         Schema::create('sl', function (Blueprint $table) {
+         Schema::create('sls', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
             $table->timestamps();
@@ -28,6 +28,6 @@ class Sl extends Migration
      */
     public function down()
     {
-        //
+       Schema::dropIfExists('sl');
     }
 }

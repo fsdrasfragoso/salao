@@ -14,8 +14,12 @@ class ControladorProduto extends Controller
     
     public function index()
     {
-        $prods = Produto::all();
-        return $prods->toJson();
+        //$prods = Produto::All();
+        $prods = Produto::with(['categoria'])->get();
+       // $prods += $prods->categoria->nome;
+      return $prods->toJson();
+        
+       
     }
 
     /**
