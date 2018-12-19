@@ -198,9 +198,11 @@
             categoria_id: $("#categoriaProduto").val() 
         };
         $.post("/api/produtos", prod, function(data) {
-            produto = JSON.parse(data);
-            linha = montarLinha(produto);
-            $('#tabelaProdutos>tbody').append(linha);            
+            //produto = JSON.parse(data);
+            //linha = montarLinha(produto);
+            //$('#tabelaProdutos>tbody').append(linha);
+            carregarProdutos();
+            
         });
       
     }
