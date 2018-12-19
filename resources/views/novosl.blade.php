@@ -7,7 +7,7 @@
         <form action="/sl" method="POST">
             @csrf
             <div class="form-group">
-                <label for="nomeCategoria">Nome da Loja</label>
+                <label for="nomeLoja">Nome do Salão</label>
                 <input type="text" class="form-control" name="nome" 
                        id="nome" placeholder="Categoria">
             </div>

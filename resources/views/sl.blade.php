@@ -3,14 +3,14 @@
 @section('body')
 <div class="card border">
     <div class="card-body">
-        <h5 class="card-title">Cadastro de Categorias</h5>
+        <h5 class="card-title">Nome do Salão</h5>
 
 @if(count($sl) > 0)
         <table class="table table-ordered table-hover">
             <thead>
                 <tr>
                     <th>Código</th>
-                    <th>Nome da Categoria</th>
+                    <th>Nome do Salão</th>
                     <th>Ações</th>
                 </tr>
             </thead>
