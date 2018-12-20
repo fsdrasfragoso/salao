@@ -91,11 +91,13 @@ class ControladorProduto extends Controller
             $prod->nome = $request->input('nome');
             $prod->preco = $request->input('preco');
             $prod->estoque = $request->input('estoque');
-            $prod->clacificacao = $request->input('classificacao');
+            $prod->classificacao = $request->input('classificacao');
             $prod->url = $request->input('url');
             $prod->categoria_id = $request->input('categoria_id');
             $prod->save();
-            return json_encode($prod);
+            $prods = Produto::where('id',$id)->with(['categoria'])->get();
+            
+            return json_encode($prods);
         }
         return response('Produto não encontrado', 404);
     }

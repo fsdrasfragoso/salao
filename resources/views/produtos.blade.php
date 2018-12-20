@@ -201,7 +201,7 @@
             //produto = JSON.parse(data);
             //linha = montarLinha(produto);
             //$('#tabelaProdutos>tbody').append(linha);
-            carregarProdutos();
+            carregarProdutos()
             
         });
       
@@ -228,15 +228,7 @@
                 e = linhas.filter( function(i, e) { 
                     return ( e.cells[0].textContent == prod.id );
                 });
-                if (e) {
-                    e[0].cells[0].textContent = prod.id;
-                    e[0].cells[1].textContent = prod.nome;
-                    e[0].cells[2].textContent = prod.estoque;
-                    e[0].cells[3].textContent = prod.preco;
-                    e[0].cells[4].textContent = prod.classificacao;
-                    e[0].cells[5].textContent = prod.url;
-                    e[0].cells[6].textContent = prod.categoria.nome;
-                }
+                location.reload();
             },
             error: function(error) {
                 console.log(error);
