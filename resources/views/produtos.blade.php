@@ -201,8 +201,9 @@
             //produto = JSON.parse(data);
             //linha = montarLinha(produto);
             //$('#tabelaProdutos>tbody').append(linha);
-            carregarProdutos()
             
+            //carregarProdutos()
+            location.reload();
         });
       
     }
