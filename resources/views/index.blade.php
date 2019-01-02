@@ -3,10 +3,11 @@
 
 use App\Sl;
 use App\Categoria;
+use App\Menu_Superior;
 use Illuminate\Http\Request;
   $sl = Sl::all(); 
-   
-   $cat = Categoria::all();
+  $cat = Categoria::all();
+  $menu = Menu_Superior::all();
 ?> 
 
 
@@ -71,15 +72,13 @@ use Illuminate\Http\Request;
                 <span class="sr-only">(current)</span>
               </a>
             </li>
+            @foreach($menu as $m)
+              
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#">{{$m->item_nome}}</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
+            @endforeach  
+            
           </ul>
         </div>
       </div>

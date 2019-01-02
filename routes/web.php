@@ -30,3 +30,10 @@ Route::get('/sl/editar/{id}', 'SlController@edit');
 Route::post('/categorias/{id}', 'ControladorCategoria@update');
 Route::post('/sl/{id}', 'SlController@update');
 Route::get('/test', 'ControladorProduto@index');
+
+Route::get('/CadastroMenu', 'Controlador_Menu_Superior@index');
+Route::get('/CadastroMenu/novo_item', 'Controlador_Menu_Superior@create'); 
+Route::post('/CadastroMenu', 'Controlador_Menu_Superior@store');
+Route::get('/CadastroMenu/apagar_item/{id}', 'Controlador_Menu_Superior@destroy');
+Route::get('/CadastroMenu/editar/{id}', 'Controlador_Menu_Superior@edit');
+Route::post('/CadastroMenu/{id}', 'Controlador_Menu_Superior@update');
