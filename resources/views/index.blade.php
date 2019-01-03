@@ -45,7 +45,7 @@ use Illuminate\Http\Request;
 
     <!-- Bootstrap core CSS -->
     
-    <!-- Custom styles for this template -->
+    <!-- Ryan esteve aqui  -->
    
   </head>
 
