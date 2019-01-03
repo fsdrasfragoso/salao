@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMenuSuperiorsTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateMenuSuperiorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu__superior', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
-            $table->string('item_nome');
+        Schema::create('admins', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->integer('age');
+            $table->rememberToken();
             $table->timestamps();
-            
         });
     }
 
@@ -28,6 +31,6 @@ class CreateMenuSuperiorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu__superior');
+        Schema::dropIfExists('admins');
     }
 }

@@ -28,6 +28,6 @@ class Sl extends Migration
      */
     public function down()
     {
-       Schema::dropIfExists('sl');
+       Schema::dropIfExists('sls');
     }
 }

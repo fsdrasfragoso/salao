@@ -44,19 +44,17 @@ use Illuminate\Http\Request;
     </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Custom styles for this template -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
-
+   
   </head>
 
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
          @foreach($sl as $s)
              {{$s->nome}}
          @endforeach     
@@ -78,7 +76,7 @@ use Illuminate\Http\Request;
               <a class="nav-link" href="#">{{$m->item_nome}}</a>
             </li>
             @endforeach  
-            
+          
           </ul>
         </div>
       </div>
@@ -247,7 +245,7 @@ use Illuminate\Http\Request;
     <!-- /.container -->
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-danger">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
       </div>
