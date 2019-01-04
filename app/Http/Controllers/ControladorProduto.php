@@ -6,7 +6,14 @@ use Illuminate\Http\Request;
 use App\Produto;
 
 class ControladorProduto extends Controller
-{
+    {
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    
     public function indexView()
     {
         return view('produtos');

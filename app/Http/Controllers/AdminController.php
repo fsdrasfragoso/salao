@@ -12,7 +12,7 @@ class AdminController extends Controller
         // Primeiro usar esse
         // $this->middleware('auth');
         // Depois esse:
-        $this->middleware('auth:admin');
+        $this->middleware('auth');
     }
     
     public function index(){
