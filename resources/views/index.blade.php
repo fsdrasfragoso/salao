@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
   $sl = Sl::all(); 
   $cat = Categoria::all();
   $menu = Menu_Superior::all();
+
+// parte responsavel por inicializar o banco de dados! 
 ?> 
 
 
