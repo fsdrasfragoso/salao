@@ -40,7 +40,7 @@
 		<div class="container-fluid">
 			<!-- logo -->
 			<div class="site-logo">
-            <img src="img/sad.png" alt="logo">
+            <img src="{{asset('css/img/sad.png')}}" alt="logo">
 			</div>
 			<!-- responsivo -->
             
@@ -49,7 +49,7 @@
 				<i class="fa fa-bars"></i>
 			</div>
 			<div class="header-right">
-				<a href="cart.html" class="card-bag"><img src="img/icons/bag.png" alt=""><span>0</span></a>
+				<a href="cart.html" class="card-bag"><img src="{{asset('css/img/icons/bag.png')}}" alt=""><span>0</span></a>
 			</div>
 			<!-- site menu -->
 			<ul class="main-menu">
@@ -70,10 +70,10 @@
 
 	<!-- Seção do Slide -->
                                                 
-	<section class="hero-section set-bg" data-setbg="img/bg1.jpg">
+	<section class="hero-section set-bg" data-setbg="{{asset('css/img/bg1.jpg')}}">
 		<div class="hero-slider owl-carousel">
 			<div class="hs-item">                <!-- IMG DE 1036x846 -->
-				<div class="hs-left"><img src="img/slider-img.png" alt=""></div>
+				<div class="hs-left"><img src="{{asset('css/img/slider-img.png')}}" alt=""></div>
 				<div class="hs-right">
 					<div class="hs-content">
 						<div class="price">Ouse inovar!</div>
@@ -83,7 +83,7 @@
 				</div>
 			</div>
 			<div class="hs-item">                <!-- IMG DE 1036x846 -->
-				<div class="hs-left"><img src="img/slider-img.png" alt=""></div>
+				<div class="hs-left"><img src="{{asset('css/img/slider-img.png')}}" alt=""></div>
 				<div class="hs-right">
 					<div class="hs-content">
 						<div class="price">AAAAAA</div>
@@ -108,7 +108,7 @@
 				<li>
 					<div class="intro-item">
 						<figure>
-							<img src="img/intro/1.jpg" alt="#">
+							<img src="{{asset('css/img/intro/1.jpg')}}" alt="#">
 						</figure>
 						<div class="product-info">
 							<h5>PRODUTO</h5>
@@ -120,7 +120,7 @@
 				<li>
 					<div class="intro-item">
 						<figure>
-							<img src="img/intro/2.jpg" alt="#">
+							<img src="{{asset('css/img/intro/2.jpg')}}" alt="#">
 						</figure>
 						<div class="product-info">
 							<h5>PRODUTO</h5>
@@ -132,7 +132,7 @@
 				<li>
 					<div class="intro-item">
 						<figure>
-							<img src="img/intro/3.jpg" alt="#">
+							<img src="{{asset('css/img/intro/3.jpg')}}" alt="#">
 							<div class="bache">NOVO!</div>
 						</figure>
 						<div class="product-info">
@@ -145,7 +145,7 @@
 				<li>
 					<div class="intro-item">
 						<figure>
-							<img src="img/intro/4.jpg" alt="#">
+							<img src="{{asset('css/img/intro/4.jpg')}}" alt="#">
 						</figure>
 						<div class="product-info">
 							<h5>PRODUTO</h5>
@@ -157,7 +157,7 @@
 				<li>
 					<div class="intro-item">
 						<figure>
-							<img src="img/intro/5.jpg" alt="#">
+							<img src="{{asset('css/img/intro/5.jpg')}}" alt="#">
 						</figure>
 						<div class="product-info">
 							<h5>PRODUTO</h5>
@@ -191,7 +191,7 @@
 				</div>
 				<div class="col-md-6">
 					<div class="featured-item mb-0">
-						<img src="img/OFERTA.jpg" alt="">
+						<img src="{{asset('css/img/OFERTA.jpg')}}" alt="">
 						<a href="#" class="site-btn">VER MAIS</a>
 					</div>
 				</div>
@@ -213,7 +213,7 @@
 				<div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/1.jpg" alt="">
+							<img src="{{asset('css/img/products/1.jpg')}}" alt="">
 							<div class="pi-meta">
 								<a href="product.html"><div class="pi-m-left">
 									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
@@ -239,11 +239,11 @@
 							<div class="bache">NOVO!</div>
 							<div class="pi-meta">
 								<a href="product.html"><div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
+									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
 									<p>Vista rápida</p>
 								</div></a>
 								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
+									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
 									
 								</div>
 							</div>
@@ -258,14 +258,14 @@
 				<div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/3.jpg" alt="">
+							<img src="{{asset('css/img/products/3.jpg')}}" alt="">
 							<div class="pi-meta">
 								<a href="product.html"><div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
+									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
 									<p>Vista rápida</p>
 								</div></a>
 								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
+									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
 									
 								</div>
 							</div>
@@ -280,15 +280,15 @@
 				<div class="mix col-lg-3 col-md-6 new best">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/4.jpg" alt="">
+							<img src="{{asset('css/img/products/4.jpg')}}" alt="">
 							<div class="bache sale">OFERTA!</div>
 							<div class="pi-meta">
 								<a href="product.html"><div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
+									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
 									<p>Vista rápida</p>
 								</div></a>
 								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
+									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
 									
 								</div>
 							</div>
@@ -303,14 +303,14 @@
 				<div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/5.jpg" alt="">
+							<img src="{{asset('css/img/products/5.jpg')}}" alt="">
 							<div class="pi-meta">
 								<a href="product.html"><div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
+									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
 									<p>Vista rápida</p>
 								</div></a>
 								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
+									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
 									
 								</div>
 							</div>
@@ -325,15 +325,15 @@
 				<div class="mix col-lg-3 col-md-6 new">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/6.jpg" alt="">
+							<img src="{{asset('css/img/products/6.jpg')}}" alt="">
 							<div class="bache">NOVO!</div>
 							<div class="pi-meta">
 								<a href="product.html"><div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
+									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
 									<p>Vista rápida</p>
 								</div></a>
 								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
+									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
 									
 								</div>
 							</div>
@@ -348,14 +348,14 @@
 				<div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/7.jpg" alt="">
+							<img src="{{asset('css/img/products/7.jpg')}}" alt="">
 							<div class="pi-meta">
 								<a href="product.html"><div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
+									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
 									<p>Vista rápida</p>
 								</div></a>
 								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
+									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
 									
 								</div>
 							</div>
@@ -370,14 +370,14 @@
 				<div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/8.jpg" alt="">
+							<img src="{{asset('css/img/products/8.jpg')}}" alt="">
 							<div class="pi-meta">
 								<a href="product.html"><div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
+									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
 									<p>Vista rápida</p>
 								</div></a>
 								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
+									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
 									
 								</div>
 							</div>
@@ -401,7 +401,7 @@
 			<div class="row">
 				<div class="col-lg-5">
 					<div class="featured-item">
-						<img src="img/OFERTA1.jpg" alt="">
+						<img src="{{asset('css/img/OFERTA1.jpg')}}" alt="">
 						<a href="#" class="site-btn">Ver mais</a>
 					</div>
 				</div>
@@ -409,7 +409,7 @@
 					<h4 class="bgs-title">Artigos auxiliadores</h4>
 					<div class="blog-item">
 						<div class="bi-thumb">
-							<a href="blog.html"><img src="img/blog-thumb/1.jpg" alt=""></a>
+							<a href="blog.html"><img src="{{asset('css/img/blog-thumb/1.jpg')}}" alt=""></a>
 						</div>
 						<div class="bi-content">
 							<a href="blog.html"><a href="blog.html"><h5>ARTIGO DE AJUDA</h5></a>
@@ -419,7 +419,7 @@
 					</div>
 					<div class="blog-item">
 						<div class="bi-thumb">
-							<a href="blog.html"><img src="img/blog-thumb/2.jpg" alt=""></a>
+							<a href="blog.html"><img src="{{asset('css/img/blog-thumb/2.jpg')}}" alt=""></a>
 						</div>
 						<div class="bi-content">
 							<a href="blog.html"><h5>ARTIGO DE AJUDA</h5></a>
@@ -429,7 +429,7 @@
 					</div>
 					<div class="blog-item">
 						<div class="bi-thumb">
-							<a href="blog.html"><img src="img/blog-thumb/3.jpg" alt=""></a>
+							<a href="blog.html"><img src="{{asset('css/img/blog-thumb/3.jpg')}}" alt=""></a>
 						</div>
 						<div class="bi-content">
 							<a href="blog.html"><h5>ARTIGO DE AJUDA</h5></a>
@@ -450,14 +450,14 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-8 col-sm-12">
 					<div class="footer-widget about-widget">
-				        <img src="img/logo.png" class="footer-logo" alt="">
+				        <img src="{{asset('css/img/logo.png')}}" class="footer-logo" alt="">
 						<p>Breve descrição.</p>
 						<div class="cards">
-							<img src="img/cards/5.png" alt="">
-							<img src="img/cards/4.png" alt="">
-							<img src="img/cards/3.png" alt="">
-							<img src="img/cards/2.png" alt="">
-							<img src="img/cards/1.png" alt="">
+							<img src="{{asset('css/img/cards/5.png')}}" alt="">
+							<img src="{{asset('css/img/cards/4.png')}}" alt="">
+							<img src="{{asset('css/img/cards/3.png')}}" alt="">
+							<img src="{{asset('css/img/cards/2.png')}}" alt="">
+							<img src="{{asset('css/img/cards/1.png')}}" alt="">
 						</div>
 					</div>
 				</div>
