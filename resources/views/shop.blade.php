@@ -16,10 +16,10 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="{{asset('css/css/bootstrap.min.css')}}"/>
-	<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}"/>
-	<link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}"/>
-	<link rel="stylesheet" href="{{asset('css/style.css')}}"/>
-	<link rel="stylesheet" href="{{asset('css/animate.css')}}"/>
+	<link rel="stylesheet" href="{{asset('css/css/font-awesome.min.css')}}"/>
+	<link rel="stylesheet" href="{{asset('css/css/owl.carousel.css')}}"/>
+	<link rel="stylesheet" href="{{asset('css/css/style.css')}}"/>
+	<link rel="stylesheet" href="{{asset('css/css/animate.css')}}"/>
 
 
 	<!--[if lt IE 9]>
@@ -70,7 +70,7 @@
 				<a href="">Home</a> / 
 				<span>Shop</span>
 			</div>
-			<img src="img/categorie-page-top.png" alt="" class="cata-top-pic">
+			<img src="{{asset('css/img/categorie-page-top.png')}}" alt="" class="cata-top-pic">
 		</div>
 	</div>
 	
@@ -468,13 +468,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 	<!--====== Javascripts & Jquery ======-->
-    <script src="{{ asset('js/app.js')}}" type="text/javascript"></script>
-	<script src="{{ asset('js/jquery-3.2.1.min.js')}}" type="text/javascript"></script>
-	<script src="{{ asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
-	<script src="{{ asset('js/owl.carousel.min.js')}}" type="text/javascript"></script>
-	<script src="{{ asset('js/mixitup.min.js')}}" type="text/javascript"></script>
-	<script src="{{ asset('js/sly.min.js')}}" type="text/javascript"></script>
-	<script src="{{ asset('js/jquery.nicescroll.min.js')}}" type="text/javascript"></script>
-	<script src="{{ asset('js/main.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
+	
+	
+	<script src="{{ asset('js/js/owl.carousel.min.js')}}" type="text/javascript"></script>
+	<script src="{{ asset('js/js/mixitup.min.js')}}" type="text/javascript"></script>
+	<script src="{{ asset('js/js/sly.min.js')}}" type="text/javascript"></script>
+	<script src="{{ asset('js/js/jquery.nicescroll.min.js')}}" type="text/javascript"></script>
+	<script src="{{ asset('js/js/main.js')}}" type="text/javascript"></script>
     </body>
 </html>
