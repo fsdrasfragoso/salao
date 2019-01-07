@@ -14,6 +14,8 @@
                     <th>Estoque</th>
                     <th>Preço</th>
                     <th>Classificação</th>
+                    <th>Fabricação</th>
+                    <th>Validade</th>
                     <th>Imagem</th>
                     <th>Categoria</th>
                     <th> Ação</th>
@@ -70,6 +72,20 @@
                     </div>   
                     
                     <div class="form-group">
+                        <label for="fabricao" class="control-label">Fabricação</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control" id="fabricacao" placeholder="fabricacao">
+                        </div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label for="fabricao" class="control-label">Validade</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control" id="validade" placeholder="validade">
+                        </div>
+                    </div> 
+                    
+                    <div class="form-group">
                         <label for="url" class="control-label">url</label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="url" placeholder="url">
@@ -113,6 +129,8 @@
         $('#precoProduto').val('');
         $('#quantidadeProduto').val('');
         $('#classificacao').val('');
+        $('#fabricacao').val('');
+        $('#validade').val('');
         $('#url').val('');
         $('#dlgProdutos').modal('show');
     }
@@ -134,6 +152,8 @@
             "<td>" + p.estoque + "</td>" +
             "<td id='preco'>" + p.preco + "</td>" +
             "<td>" + p.classificacao + "</td>" +
+            "<td>" + p.fabricacao + "</td>" +
+            "<td>" + p.validade + "</td>" +
             "<td>" + p.url + "</td>" +
             "<td>" + p.categoria.nome+ "</td>" +
             "<td>" +
@@ -152,6 +172,8 @@
             $('#precoProduto').val(data.preco);
             $('#quantidadeProduto').val(data.estoque);
             $('#classificacao').val(data.classificacao);
+            $('#fabricaco').val(data.fabricao);
+            $('#validade').val(data.validade);
             $('#url').val(data.url);
             $('#categoriaProduto').val(data.categoria_id);
             $('#dlgProdutos').modal('show');            
@@ -194,6 +216,8 @@
             preco: $("#precoProduto").val(), 
             estoque: $("#quantidadeProduto").val(), 
             classificacao: $("#classificacao").val(), 
+            fabricacao: $("#fabricacao").val(), 
+            validade: $("#validade").val(), 
             url: $("#url").val(), 
             categoria_id: $("#categoriaProduto").val() 
         };
@@ -215,6 +239,8 @@
             preco: $("#precoProduto").val(), 
             estoque: $("#quantidadeProduto").val(), 
             classificacao: $("#classificacao").val(), 
+            fabricacao: $("#fabricacao").val(), 
+            validade: $("#validade").val(), 
             url: $("#url").val(), 
             categoria_id: $("#categoriaProduto").val() 
         };

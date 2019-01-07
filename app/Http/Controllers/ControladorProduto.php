@@ -52,6 +52,8 @@ class ControladorProduto extends Controller
             $prod->preco = $request->input('preco');
             $prod->estoque = $request->input('estoque');
             $prod->classificacao = $request->input('classificacao');
+            $prod->fabricacao = $request->input('fabricacao');
+            $prod->validade = $request->input('validade');
             $prod->url = $request->input('url');
             $prod->categoria_id = $request->input('categoria_id');
             $prod->save();
@@ -99,6 +101,8 @@ class ControladorProduto extends Controller
             $prod->preco = $request->input('preco');
             $prod->estoque = $request->input('estoque');
             $prod->classificacao = $request->input('classificacao');
+            $prod->fabricacao = $request->input('fabricacao');
+            $prod->fabricao = $request->input('fabricao');
             $prod->url = $request->input('url');
             $prod->categoria_id = $request->input('categoria_id');
             $prod->save();
