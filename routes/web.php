@@ -50,3 +50,13 @@ Route::get('/shop', function () {
 Route::get('/teste_ryan', function () {
     return view('teste_ryan');
 });
+
+
+
+
+
+Route::get('/arquivos', function () {
+    return view('arquivos');
+});
+
+
