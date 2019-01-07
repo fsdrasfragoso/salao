@@ -51,7 +51,9 @@ Route::get('/teste_ryan', function () {
     return view('teste_ryan');
 });
 
-
+Route::get('/cart', function () {
+    return view('cart');
+});
 
 
 

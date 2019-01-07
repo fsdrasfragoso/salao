@@ -5,10 +5,11 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0 ">
-	<meta name="csrf-token" content="{{csrf_token() }}">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="csrf-token" content="{{ csrf_token() }}"> 
+	
+	
 	<!-- Favicon -->   
 	<link href="img/logo%20a.png" rel="shortcut icon"/>
 
@@ -16,12 +17,12 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
-
+	<link rel="stylesheet" href="{{asset('css/css/bootstrap.min.css')}}"/>
+	<link rel="stylesheet" href="{{asset('css/css/font-awesome.min.css')}}"/>
+	<link rel="stylesheet" href="{{asset('css/css/owl.carousel.css')}}"/>
+	<link rel="stylesheet" href="{{asset('css/css/style.css')}}"/>
+	<link rel="stylesheet" href="{{asset('css/css/animate.css')}}"/>
+    <link href="{{asset('css/app.css)}}" rel="stylesheet">
 
 	<!-->
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -40,14 +41,14 @@
 		<div class="container-fluid">
 			<!-- logo -->
 			<div class="site-logo">
-				<img src="img/sad.png" alt="logo">
+				<img src="{{asset('css/img/sad.png')}}" alt="logo">
 			</div>
 			<!-- responsive -->
 			<div class="nav-switch">
 				<i class="fa fa-bars"></i>
 			</div>
 			<div class="header-right">
-				<a href="cart.html" class="card-bag"><img src="img/icons/bag.png" alt=""><span>1</span></a>
+				<a href="cart.html" class="card-bag"><img src="{{asset('css/img/icons/bag.png')}}" alt=""><span>1</span></a>
 			</div>
 			<!-- site menu -->
 			<ul class="main-menu">
@@ -70,7 +71,7 @@
 				<a href="#">Home</a> / 
 				<span>Carrinho</span>
 			</div>
-			<img src="img/page-info-art.png" alt="" class="page-info-art">
+			<img src="{{asset('css/img/page-info-art.png')}}" alt="" class="page-info-art">
 		</div>
 	</div>
 	<!-- Page Info end -->
@@ -92,7 +93,7 @@
 					<tbody>
 						<tr>
 							<td class="product-col">
-								<img src="img/product/cart.jpg" alt="">
+								<img src="{{asset('css/img/product/cart.jpg')}}" alt="">
 								<div class="pc-title">
 									<h4>PRODUTO</h4>
 									
@@ -169,14 +170,14 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-8 col-sm-12">
 					<div class="footer-widget about-widget">
-						<img src="img/logo.png" class="footer-logo" alt="">
+						<img src="{{asset('css/img/logo.png')}}" class="footer-logo" alt="">
 						<p>Breve descrição</p>
 						<div class="cards">
-							<img src="img/cards/5.png" alt="">
-							<img src="img/cards/4.png" alt="">
-							<img src="img/cards/3.png" alt="">
-							<img src="img/cards/2.png" alt="">
-							<img src="img/cards/1.png" alt="">
+							<img src="{{asset('css/img/cards/5.png')}}" alt="">
+							<img src="{{asset('css/img/cards/4.png')}}" alt="">
+							<img src="{{asset('css/img/cards/3.png')}}" alt="">
+							<img src="{{asset('css/img/cards/2.png')}}" alt="">
+							<img src="{{asset('css/img/cards/1.png')}}" alt="">
 						</div>
 					</div>
 				</div>
@@ -247,7 +248,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 	<!--====== Javascripts & Jquery ======-->
-	 <script src="{{ asset('js/app.js')}}" type="text/javascript"> </script> 
+	  <script src="{{ asset('js/app.js')}}" type="text/javascript"> </script> 
 	
 	<script src="{{asset('js/js/owl.carousel.min.js')}}"></script>
 	<script src="{{asset('js/js/mixitup.min.js')}}"></script>
