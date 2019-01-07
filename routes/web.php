@@ -53,7 +53,9 @@ Route::get('/teste_ryan', function () {
 
 
 
-
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('files', 'FileEntriesController@index');
+});
 
 Route::get('/arquivos', 'PostControlador@index');
 Route::post('/arquivos', 'PostControlador@store');
