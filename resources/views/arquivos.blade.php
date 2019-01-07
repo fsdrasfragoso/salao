@@ -71,18 +71,18 @@
       <div class="album py-5 bg-light">
         <div class="container">
           <div class="row">
-            
+            @foreach($posts as $post)
                 <div class="col-md-4">
                   <div class="card mb-4 shadow-sm">
-                    <img class="card-img-top figure-img img-fluid rounded" src="">
+                    <img class="card-img-top figure-img img-fluid rounded" src="/storage/{{ $post->arquivo }}">
                     <div class="card-body">
-                      <p class="card-text">email@dominio.com</p>
-                      <p class="card-text">Mensagem referente a imagem</p>
+                      <p class="card-text">{{ $post->email }}</p>
+                      <p class="card-text">{{ $post->mensagem }}</p>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <!--button type="button" class="btn btn-sm btn-outline-secondary">Download</button-->
-                          <a type="button" class="btn btn-sm btn-outline-secondary" href="#">Download</a>
-                          <form>
+                          <a type="button" class="btn btn-sm btn-outline-secondary" href="/download/{{$post->id}}">Download</a>
+                          <form action="/{{ $post->id }}" method="POST">
                             @csrf
                             <input type="hidden" name="_method" value="delete">
                             <button type="submit" class="btn btn-sm btn-outline-danger">Apagar</button>
@@ -92,7 +92,7 @@
                     </div>
                   </div>
                 </div>
-            
+            @endforeach
           </div>
         </div>
       </div>

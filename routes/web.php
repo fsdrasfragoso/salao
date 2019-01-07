@@ -55,8 +55,9 @@ Route::get('/teste_ryan', function () {
 
 
 
-Route::get('/arquivos', function () {
-    return view('arquivos');
-});
+Route::get('/arquivos', 'PostControlador@index');
+Route::post('/arquivos', 'PostControlador@store');
+Route::delete('/arquivos/{id}', 'PostControlador@destroy');
+Route::get('/arquivos/{id}', 'PostControlador@download');
 
 

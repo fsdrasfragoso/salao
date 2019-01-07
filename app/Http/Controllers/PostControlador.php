@@ -14,7 +14,7 @@ class PostControlador extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('index', compact(['posts']));
+        return view('arquivos', compact(['posts']));
     }
 
     public function store(Request $request)
@@ -27,7 +27,7 @@ class PostControlador extends Controller
         $post->arquivo = $path; 
         $post->save();
 
-        return redirect('/');
+        return redirect('/arquivos');
     }
 
     public function destroy($id) {
@@ -36,7 +36,7 @@ class PostControlador extends Controller
             Storage::disk('public')->delete($post->arquivo); 
             $post->delete();
         }
-        return redirect('/');
+        return redirect('/arquivos');
     }
 
     public function download($id) {
@@ -45,7 +45,7 @@ class PostControlador extends Controller
             $path =  Storage::disk('public')->getDriver()->getAdapter()->applyPathPrefix($post->arquivo);
             return response()->download($path);
         }
-        return redirect('/');
+        return redirect('/arquivos');
     }
 
 
