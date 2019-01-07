@@ -8,10 +8,10 @@ use App\Produto;
 class ControladorProduto extends Controller
     {
     
-    public function __construct()
+   /* public function __construct()
     {
         $this->middleware('auth');
-    }
+    }  */
     
     
     public function indexView()
