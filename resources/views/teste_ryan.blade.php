@@ -1,7 +1,26 @@
+<?php  
+
+use App\Sl;
+use App\Categoria;
+use App\Menu_Superior;
+use Illuminate\Http\Request;
+  $sl = Sl::all(); 
+  $cat = Categoria::all();
+  $menu = Menu_Superior::all();
+?> 
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Dona Rosa</title>
+	 <title>   
+      @foreach($sl as $s)
+        {{$s->nome}}
+      @endforeach   
+    
+      
+    </title>
+
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
@@ -56,12 +75,9 @@
                 <form class="search">
                 <input class="searchTerm" placeholder="  O que você procura?" /><input class="searchButton" type="submit" />
                 </form>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="shop.html">Shop</a></li>
-				<li><a href="#">Serviços</a></li>
-                <li><a href="#">Blog</a></li>
-				<li><a href="#">Sobre Nós</a></li>
-				<li><a href="contact.html">Contato</a></li>
+				  @foreach($menu as $m)
+                <li><a href="/test_ryan">{{$m->item_nome}}</a></li>
+				  @endforeach         
 			</ul>
 		</div>
 	</header>
