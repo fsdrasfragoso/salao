@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Produto;
-
+use Storage;
 Class UserController extends Controller {
 public function store(request $request){
 
     $path=$request->file('image')->store('/public'); 
+    
+     $novo = "public/".$path;
+        Storage::move($path, $novo);
     
    // echo $path;
     
@@ -20,7 +23,7 @@ public function store(request $request){
             $prod->classificacao = $request->input('classificacao');
             $prod->fabricacao = $request->input('fabricacao');
             $prod->validade = $request->input('validade');
-            $prod->url = $path;
+            $prod->url = "storage/".$path;
             $prod->categoria_id = $request->input('categoria_id');
             $prod->save();
     
