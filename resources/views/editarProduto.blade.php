@@ -11,7 +11,7 @@
 
 <div class="card border">
     <div class="card-body">
-       <form action="{{URL::to('/store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+       <form action="/udateoproduto/{{$prod->id}}" class="form-horizontal" enctype="multipart/form-data" method="post">
           
               <input type="hidden" name="_token" value="{{csrf_token()}}" id="token">    
 
@@ -49,14 +49,14 @@
                     <div class="form-group">
                         <label for="fabricao" class="control-label">Fabricação</label>
                         <div class="input-group">
-                            <input type="date" class="form-control" id="fabricacao" placeholder="fabricacao" name="fabricacao">
+                            <input type="date" class="form-control" id="fabricacao" placeholder="fabricacao" name="fabricacao" value="{{$prod->fabricacao}}">
                         </div>
                     </div> 
                     
                     <div class="form-group">
                         <label for="fabricao" class="control-label">Validade</label>
                         <div class="input-group">
-                            <input type="date" class="form-control" id="validade" placeholder="validade" name="validade">
+                            <input type="date" class="form-control" id="validade" placeholder="validade" name="validade" value="{{$prod->validade}}">
                         </div>
                     </div> 
                     
