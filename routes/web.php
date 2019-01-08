@@ -51,18 +51,18 @@ Route::get('/teste_ryan', function () {
     return view('teste_ryan');
 });
 
-<<<<<<< HEAD
+
 Route::get('/cart', function () {
     return view('cart');
 });
 
-=======
+
 
 Route::view('/upload', "upload");
 Route::view('/novoProduto', "novoProduto");
 Route::post('/store', "UserController@store");
 Route::post('/produto', "ControladorProduto@store");
->>>>>>> 4cb568d234fc3c6ea72538399aec6cf76f80894e
+
 
 
 Route::get('/arquivos', 'PostControlador@index');
