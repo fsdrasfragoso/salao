@@ -59,7 +59,7 @@ use Illuminate\Http\Request;
 		<div class="container-fluid">
 			<!-- logo -->
 			<div class="site-logo">
-            <img src="{{asset('css/img/sad.png')}}" alt="logo">
+            
 			</div>
 			<!-- responsivo -->
             
