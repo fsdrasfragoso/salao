@@ -159,7 +159,7 @@
             "<td><img src='"+p.url+"' height='50px' alt='"+p.nome+"'/></td>" +
             "<td>" + p.categoria.nome+ "</td>" +
             "<td>" +
-              '<button class="btn btn-sm btn-primary" onclick="editar(' + p.id + ')"> Editar </button> ' +
+              '<a href="/editarproduto/'+p.id+'" class="btn btn-sm btn-primary"> Editar </a> ' +
               '<button class="btn btn-sm btn-danger" onclick="remover(' + p.id + ')"> Apagar </button> ' +
             "</td>" +
             "</tr>";

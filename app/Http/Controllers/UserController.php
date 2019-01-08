@@ -30,7 +30,14 @@ public function store(request $request){
     return redirect('/produtos');
     
 }    
-    
+    public function edit($id)
+    {
+        $prod = Produto::find($id);
+        if(isset($prod)) {
+            return view('editarProduto', compact('prod'));
+        }
+        return redirect('/produtos');
+    } 
     
 }
 

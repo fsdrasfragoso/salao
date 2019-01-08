@@ -55,6 +55,7 @@ Route::get('/teste_ryan', function () {
 Route::view('/upload', "upload");
 Route::view('/novoProduto', "novoProduto");
 Route::post('/store', "UserController@store");
+Route::get('/editarproduto/{id}', "UserController@edit");
 Route::post('/produto', "ControladorProduto@store");
 
 
