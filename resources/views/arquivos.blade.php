@@ -57,7 +57,7 @@
               <textarea class="form-control" id="mensagem" name="mensagem" rows="3"></textarea>
             </div>
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="arquivo" name="arquivo">
+              <input type="file"  id="arquivo" name="arquivo">
               <label class="custom-file-label" for="arquivo">Escolha um arquivo</label>
             </div>
             <p>
