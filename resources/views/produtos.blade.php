@@ -156,7 +156,7 @@
             "<td>" + p.classificacao + "</td>" +
             "<td>" + p.fabricacao + "</td>" +
             "<td>" + p.validade + "</td>" +
-            "<td><img src='{{asset('/upload/dIiUgZGEQcaSel9uORSvdxVEbsR8lHpDJwQfMktP.png')}}' alt=''>" + p.url + "</td>" +
+            "<td><img src='"+p.url+"' height='50px' alt='"+p.nome+"'/></td>" +
             "<td>" + p.categoria.nome+ "</td>" +
             "<td>" +
               '<button class="btn btn-sm btn-primary" onclick="editar(' + p.id + ')"> Editar </button> ' +
