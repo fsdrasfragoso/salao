@@ -14,6 +14,8 @@
                     <th>Estoque</th>
                     <th>Preço</th>
                     <th>Classificação</th>
+                    <th>Fabricação</th>
+                    <th>Validade</th>
                     <th>Imagem</th>
                     <th>Categoria</th>
                     <th> Ação</th>
@@ -26,7 +28,7 @@
      
     </div>
     <div class="card-footer">
-       <button class="btn btn-sm btn-primary" role="button" onClick="novoProduto()">Novo produto</button>
+       <a class="btn btn-sm btn-primary" role="button" href="/novoProduto">Novo produto</a>
     </div>
 </div>
 
@@ -34,11 +36,13 @@
 <div class="modal" tabindex="-1" role="dialog" id="dlgProdutos">
     <div class="modal-dialog" role="document"> 
         <div class="modal-content">
-            <form class="form-horizontal" id="formProduto">
+            <form class="form-horizontal" id="formProduto" enctype="multipart/form-data">
                 <div class="modal-header">
                     <h5 class="modal-title">Novo produto</h5>
                 </div>
                 <div class="modal-body">
+                    
+                     <input type="hidden" name="_token" value="{{csrf_token()}}" id="token">    
 
                     <input type="hidden" id="id" class="form-control">
                     <div class="form-group">
@@ -70,9 +74,23 @@
                     </div>   
                     
                     <div class="form-group">
+                        <label for="fabricao" class="control-label">Fabricação</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control" id="fabricacao" placeholder="fabricacao">
+                        </div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label for="fabricao" class="control-label">Validade</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control" id="validade" placeholder="validade">
+                        </div>
+                    </div> 
+                    
+                    <div class="form-group">
                         <label for="url" class="control-label">url</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="url" placeholder="url">
+                            <input type="file" class="form-control" id="url" placeholder="url">
                         </div>
                     </div>   
 
@@ -113,6 +131,8 @@
         $('#precoProduto').val('');
         $('#quantidadeProduto').val('');
         $('#classificacao').val('');
+        $('#fabricacao').val('');
+        $('#validade').val('');
         $('#url').val('');
         $('#dlgProdutos').modal('show');
     }
@@ -134,7 +154,9 @@
             "<td>" + p.estoque + "</td>" +
             "<td id='preco'>" + p.preco + "</td>" +
             "<td>" + p.classificacao + "</td>" +
-            "<td>" + p.url + "</td>" +
+            "<td>" + p.fabricacao + "</td>" +
+            "<td>" + p.validade + "</td>" +
+            "<td><img src='{{asset('/upload/dIiUgZGEQcaSel9uORSvdxVEbsR8lHpDJwQfMktP.png')}}' alt=''>" + p.url + "</td>" +
             "<td>" + p.categoria.nome+ "</td>" +
             "<td>" +
               '<button class="btn btn-sm btn-primary" onclick="editar(' + p.id + ')"> Editar </button> ' +
@@ -152,6 +174,8 @@
             $('#precoProduto').val(data.preco);
             $('#quantidadeProduto').val(data.estoque);
             $('#classificacao').val(data.classificacao);
+            $('#fabricaco').val(data.fabricao);
+            $('#validade').val(data.validade);
             $('#url').val(data.url);
             $('#categoriaProduto').val(data.categoria_id);
             $('#dlgProdutos').modal('show');            
@@ -194,8 +218,12 @@
             preco: $("#precoProduto").val(), 
             estoque: $("#quantidadeProduto").val(), 
             classificacao: $("#classificacao").val(), 
+            fabricacao: $("#fabricacao").val(), 
+            validade: $("#validade").val(), 
             url: $("#url").val(), 
-            categoria_id: $("#categoriaProduto").val() 
+            categoria_id: $("#categoriaProduto").val(), 
+            _token: $("#token").val() 
+            
         };
         $.post("/api/produtos", prod, function(data) {
             //produto = JSON.parse(data);
@@ -215,8 +243,11 @@
             preco: $("#precoProduto").val(), 
             estoque: $("#quantidadeProduto").val(), 
             classificacao: $("#classificacao").val(), 
+            fabricacao: $("#fabricacao").val(), 
+            validade: $("#validade").val(), 
             url: $("#url").val(), 
-            categoria_id: $("#categoriaProduto").val() 
+            categoria_id: $("#categoriaProduto").val(), 
+            _token: $("#token").val() 
         };
         $.ajax({
             type: "PUT",

@@ -52,7 +52,10 @@ Route::get('/teste_ryan', function () {
 });
 
 
-
+Route::view('/upload', "upload");
+Route::view('/novoProduto', "novoProduto");
+Route::post('/store', "UserController@store");
+Route::post('/produto', "ControladorProduto@store");
 
 
 Route::get('/arquivos', 'PostControlador@index');
