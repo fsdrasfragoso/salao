@@ -9,7 +9,7 @@ use App\Produto;
 Class UserController extends Controller {
 public function store(request $request){
 
-    $path=$request->file('image')->store('upload');
+    $path=$request->file('image')->store('/public'); 
     
    // echo $path;
     
