@@ -47,6 +47,8 @@ class ControladorProduto extends Controller
      */
     public function store(Request $request)
     {
+        $path=$request->file('url')->store('upload');
+        
         $prod = new Produto();
         $prod->nome = $request->input('nome');
             $prod->preco = $request->input('preco');
@@ -54,7 +56,7 @@ class ControladorProduto extends Controller
             $prod->classificacao = $request->input('classificacao');
             $prod->fabricacao = $request->input('fabricacao');
             $prod->validade = $request->input('validade');
-            $prod->url = $request->input('url');
+            $prod->url = $path;
             $prod->categoria_id = $request->input('categoria_id');
             $prod->save();
         return json_encode($prod);

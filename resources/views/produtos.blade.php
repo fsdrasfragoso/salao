@@ -28,7 +28,7 @@
      
     </div>
     <div class="card-footer">
-       <button class="btn btn-sm btn-primary" role="button" onClick="novoProduto()">Novo produto</button>
+       <a class="btn btn-sm btn-primary" role="button" href="/novoProduto">Novo produto</a>
     </div>
 </div>
 
@@ -36,11 +36,13 @@
 <div class="modal" tabindex="-1" role="dialog" id="dlgProdutos">
     <div class="modal-dialog" role="document"> 
         <div class="modal-content">
-            <form class="form-horizontal" id="formProduto">
+            <form class="form-horizontal" id="formProduto" enctype="multipart/form-data">
                 <div class="modal-header">
                     <h5 class="modal-title">Novo produto</h5>
                 </div>
                 <div class="modal-body">
+                    
+                     <input type="hidden" name="_token" value="{{csrf_token()}}" id="token">    
 
                     <input type="hidden" id="id" class="form-control">
                     <div class="form-group">
@@ -88,7 +90,7 @@
                     <div class="form-group">
                         <label for="url" class="control-label">url</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="url" placeholder="url">
+                            <input type="file" class="form-control" id="url" placeholder="url">
                         </div>
                     </div>   
 
@@ -219,7 +221,9 @@
             fabricacao: $("#fabricacao").val(), 
             validade: $("#validade").val(), 
             url: $("#url").val(), 
-            categoria_id: $("#categoriaProduto").val() 
+            categoria_id: $("#categoriaProduto").val(), 
+            _token: $("#token").val() 
+            
         };
         $.post("/api/produtos", prod, function(data) {
             //produto = JSON.parse(data);
@@ -242,7 +246,8 @@
             fabricacao: $("#fabricacao").val(), 
             validade: $("#validade").val(), 
             url: $("#url").val(), 
-            categoria_id: $("#categoriaProduto").val() 
+            categoria_id: $("#categoriaProduto").val(), 
+            _token: $("#token").val() 
         };
         $.ajax({
             type: "PUT",
