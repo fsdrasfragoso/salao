@@ -19,6 +19,7 @@ public function store(request $request){
     $prod = new Produto();
         $prod->nome = $request->input('nome');
             $prod->preco = $request->input('preco');
+            $prod->destaque = $request->input('destaque');
             $prod->estoque = $request->input('estoque');
             $prod->classificacao = $request->input('classificacao');
             $prod->fabricacao = $request->input('fabricacao');
@@ -33,7 +34,12 @@ public function store(request $request){
     public function edit($id)
     {
         $prod = Produto::find($id);
+        $d = "public/../".$prod->url;
+        
+       // echo $d;
+            Storage::delete($d);
         if(isset($prod)) {
+           // return $d;
             return view('editarProduto', compact('prod'));
         }
         return redirect('/produtos');
@@ -51,6 +57,7 @@ public function store(request $request){
         if (isset($prod)) {
             $prod->nome = $request->input('nome');
             $prod->preco = $request->input('preco');
+            $prod->destaque = $request->input('destaque');
             $prod->estoque = $request->input('estoque');
             $prod->classificacao = $request->input('classificacao');
             $prod->fabricacao = $request->input('fabricacao');

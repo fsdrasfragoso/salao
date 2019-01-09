@@ -31,6 +31,20 @@
                             <input type="Float" class="form-control" id="precoProduto" placeholder="Preço do produto" name="preco" value="{{$prod->preco}}">
                         </div>
                     </div>
+           
+             <div class="form-group">
+                        <label for="precoProduto" class="control-label">Colocar Produto em Destaque?</label>
+                        <div class="input-group">
+                            
+                            <select class="form-control" name="destaque">
+                            <option value="1">COLOCAR PRODUTO NO ESPAÇO DE PRINCIPAIS PRODUTOS</option>
+                            <option value="2">COLOCAR O PRODUTO NO ESPAÇO DE OFERTA</option>    
+                            <option value="3">SOMENTE COLOCAR O PRODUTO NA PAGINA PRINCIPAL</option>    
+                            <option value="4">NÃO COLOCAR O PRODUTO NA PAGINA PRINCIPAL</option>       
+                            
+                            </select>        
+                        </div>
+                    </div>    
                     
                     <div class="form-group">
                         <label for="quantidadeProduto" class="control-label">Quantidade</label>
@@ -42,7 +56,13 @@
                     <div class="form-group">
                         <label for="classificacao" class="control-label">Classificacao</label>
                         <div class="input-group">
-                            <input type="number" class="form-control" id="classificacao" placeholder="classificacao" name="classificacao" value="{{$prod->classificacao}}">
+                              <select class="form-control" name="classificacao">
+                            <option value="5">Cinco Estrelas</option>
+                            <option value="4">Quatro Estrelas</option>
+                            <option value="3">Três Estrelas</option>
+                            <option value="2">Duas Estrelas</option>
+                            <option value="1">Uma Estrelas</option>
+                            </select>          
                         </div>
                     </div>   
                     
