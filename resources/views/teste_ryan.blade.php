@@ -8,7 +8,7 @@ use App\Produto;
   $sl = Sl::all(); 
   $cat = Categoria::all();
   $menu = Menu_Superior::all();
-  $prod = Produto::all();
+  $prod = Produto::all(); 
 ?> 
 
 
@@ -61,7 +61,9 @@ use App\Produto;
 		<div class="container-fluid">
 			<!-- logo -->
 			<div class="site-logo">
-            
+            @foreach($sl as $s)
+                 {{$s->nome}}
+            @endforeach 
 			</div>
 			<!-- responsivo -->
             
@@ -182,10 +184,12 @@ use App\Produto;
 				<li class="control" data-filter=".best">Mais Vendidos</li>
 			</ul>
 			<div class="row" id="product-filter">
-				<div class="mix col-lg-3 col-md-6 best">
+				@foreach($prod as $p)
+                 @if($p->destaque==3)
+                <div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
-							<img src="{{asset('css/img/products/1.jpg')}}" alt="">
+							<img src="{{$p->url}}" alt="">
 							<div class="pi-meta">
 								<a href="product.html"><div class="pi-m-left">
 									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
@@ -198,17 +202,21 @@ use App\Produto;
 							</div>
 						</figure>
 						<div class="product-info">
-							<h6>Produto</h6>
-							<p>R$00.00</p>
+							<h6>{{$p->nome}}</h6>
+							<p>R${{number_format($p->preco,2,",",".")}}</p>
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>
 				</div>
-				<div class="mix col-lg-3 col-md-6 new">
+                @endif
+                @endforeach
+                
+                @foreach($prod as $p)
+                 @if($p->destaque==2)
+                <div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
-							<img src="{{asset('css/img/products/2.jpg')}}" alt="">
-							<div class="bache">NOVO!</div>
+							<img src="{{$p->url}}" alt="">
 							<div class="pi-meta">
 								<a href="product.html"><div class="pi-m-left">
 									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
@@ -221,16 +229,21 @@ use App\Produto;
 							</div>
 						</figure>
 						<div class="product-info">
-							<h6>Produto</h6>
-							<p>R$00.00</p>
+							<h6>{{$p->nome}}</h6>
+							<p>R${{number_format($p->preco,2,",",".")}}</p>
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>
 				</div>
-				<div class="mix col-lg-3 col-md-6 best">
+                @endif
+                @endforeach
+				
+				@foreach($prod as $p)
+                 @if($p->destaque==1)
+                <div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
-							<img src="{{asset('css/img/products/3.jpg')}}" alt="">
+							<img src="{{$p->url}}" alt="">
 							<div class="pi-meta">
 								<a href="product.html"><div class="pi-m-left">
 									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
@@ -243,124 +256,14 @@ use App\Produto;
 							</div>
 						</figure>
 						<div class="product-info">
-							<h6>Produto</h6>
-							<p>R$00.00</p>
+							<h6>{{$p->nome}}</h6>
+							<p>R${{number_format($p->preco,2,",",".")}}</p>
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>
 				</div>
-				<div class="mix col-lg-3 col-md-6 new best">
-					<div class="product-item">
-						<figure>
-							<img src="{{asset('css/img/products/4.jpg')}}" alt="">
-							<div class="bache sale">OFERTA!</div>
-							<div class="pi-meta">
-								<a href="product.html"><div class="pi-m-left">
-									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
-									<p>Vista rápida</p>
-								</div></a>
-								<div class="pi-m-right">
-									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
-									
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>Produto</h6>
-							<p>R$00.00 <span></span></p>
-							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
-						</div>
-					</div>
-				</div>
-				<div class="mix col-lg-3 col-md-6 best">
-					<div class="product-item">
-						<figure>
-							<img src="{{asset('css/img/products/5.jpg')}}" alt="">
-							<div class="pi-meta">
-								<a href="product.html"><div class="pi-m-left">
-									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
-									<p>Vista rápida</p>
-								</div></a>
-								<div class="pi-m-right">
-									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
-									
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>Produto</h6>
-							<p>R$00.00</p>
-							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
-						</div>
-					</div>
-				</div>
-				<div class="mix col-lg-3 col-md-6 new">
-					<div class="product-item">
-						<figure>
-							<img src="{{asset('css/img/products/6.jpg')}}" alt="">
-							<div class="bache">NOVO!</div>
-							<div class="pi-meta">
-								<a href="product.html"><div class="pi-m-left">
-									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
-									<p>Vista rápida</p>
-								</div></a>
-								<div class="pi-m-right">
-									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
-									
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>Produto</h6>
-							<p>R$00.00</p>
-							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
-						</div>
-					</div>
-				</div>
-				<div class="mix col-lg-3 col-md-6 best">
-					<div class="product-item">
-						<figure>
-							<img src="{{asset('css/img/products/7.jpg')}}" alt="">
-							<div class="pi-meta">
-								<a href="product.html"><div class="pi-m-left">
-									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
-									<p>Vista rápida</p>
-								</div></a>
-								<div class="pi-m-right">
-									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
-									
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>Produto</h6>
-							<p>R$00.00</p>
-							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
-						</div>
-					</div>
-				</div>
-				<div class="mix col-lg-3 col-md-6 best">
-					<div class="product-item">
-						<figure>
-							<img src="{{asset('css/img/products/8.jpg')}}" alt="">
-							<div class="pi-meta">
-								<a href="product.html"><div class="pi-m-left">
-									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
-									<p>Vista rápida</p>
-								</div></a>
-								<div class="pi-m-right">
-									<img src="{{asset('css/img/icons/heart.png')}}" alt="">
-									
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>Produto</h6>
-							<p>R$00.00 <span>R̶$̶0̶0̶.̶0̶0̶</span></p>
-							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
-						</div>
-					</div>
-				</div>
+                @endif
+                @endforeach
 			</div>
 		</div>
 	</section>

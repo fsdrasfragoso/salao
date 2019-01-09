@@ -16,6 +16,14 @@
         <a class="nav-link" href="/categorias">Categorias </a>
       </li>
         
+      <li @if($current=="CadastroMenu") class="nav-item active" @else class="nav-item" @endif>
+        <a class="nav-link" href="/CadastroMenu">Cadastro Menu</a>
+      </li>
+      
+       <li @if($current=="NomeSistema") class="nav-item active" @else class="nav-item" @endif>
+        <a class="nav-link" href="/sl">Cadastro Nome do Sistema</a>
+      </li>
+        
     </ul>
 
   </div>
