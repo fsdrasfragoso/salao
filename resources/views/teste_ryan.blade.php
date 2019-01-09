@@ -1,7 +1,28 @@
+<?php  
+
+use App\Sl;
+use App\Categoria;
+use App\Menu_Superior;
+use Illuminate\Http\Request;
+use App\Produto;
+  $sl = Sl::all(); 
+  $cat = Categoria::all();
+  $menu = Menu_Superior::all();
+  $prod = Produto::all();
+?> 
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Dona Rosa</title>
+	 <title>   
+      @foreach($sl as $s)
+        {{$s->nome}}
+      @endforeach   
+    
+      
+    </title>
+
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
@@ -56,12 +77,9 @@
                 <form class="search">
                 <input class="searchTerm" placeholder="  O que você procura?" /><input class="searchButton" type="submit" />
                 </form>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="shop.html">Shop</a></li>
-				<li><a href="#">Serviços</a></li>
-                <li><a href="#">Blog</a></li>
-				<li><a href="#">Sobre Nós</a></li>
-				<li><a href="contact.html">Contato</a></li>
+				  @foreach($menu as $m)
+                <li><a href="/test_ryan">{{$m->item_nome}}</a></li>
+				  @endforeach         
 			</ul>
 		</div>
 	</header>
@@ -78,7 +96,7 @@
 					<div class="hs-content">
 						<div class="price">Ouse inovar!</div>
 						<h2><span style="font-size: 28px">Melhores produtos</span> <br>Melhores serviços</h2>
-						<h4 class="site-btn">Compre agora!</a></h4>
+						<h4 class="site-btn"><a href="#">Compre agora!</a></h4>
 					</div>	
 				</div>
 			</div>
@@ -105,67 +123,22 @@
 		</div>
 		<div class="intro-slider">
 			<ul class="slidee">
-				<li>
+				@foreach($prod as $p)
+                 @if($p->destaque==1)
+                <li>
 					<div class="intro-item">
 						<figure>
-							<img src="{{asset('css/img/intro/1.jpg')}}" alt="#">
+							<img src="{{$p->url}}" alt="#">
 						</figure>
 						<div class="product-info">
-							<h5>PRODUTO</h5>
-							<p>R$000.00</p>
+							<h5>{{$p->nome}}</h5>
+							<p>R$ {{number_format($p->preco,2,",",".")}}</p>
 							<a href="product.html" class="site-btn btn-line">VER PRODUTO</a>
 						</div>
                     </div>
 				</li>
-				<li>
-					<div class="intro-item">
-						<figure>
-							<img src="{{asset('css/img/intro/2.jpg')}}" alt="#">
-						</figure>
-						<div class="product-info">
-							<h5>PRODUTO</h5>
-							<p>R$000.00</p>
-							<a href="product.html" class="site-btn btn-line">VER PRODUTO</a>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="intro-item">
-						<figure>
-							<img src="{{asset('css/img/intro/3.jpg')}}" alt="#">
-							<div class="bache">NOVO!</div>
-						</figure>
-						<div class="product-info">
-							<h5>PRODUTO</h5>
-							<p>R$000.00</p>
-							<a href="product.html" class="site-btn btn-line">VER PRODUTO</a>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="intro-item">
-						<figure>
-							<img src="{{asset('css/img/intro/4.jpg')}}" alt="#">
-						</figure>
-						<div class="product-info">
-							<h5>PRODUTO</h5>
-							<p>R$000.00</p>
-							<a href="product.html" class="site-btn btn-line">VER PRODUTO</a>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="intro-item">
-						<figure>
-							<img src="{{asset('css/img/intro/5.jpg')}}" alt="#">
-						</figure>
-						<div class="product-info">
-							<h5>PRODUTO</h5>
-							<p>R$000.00</p>
-							<a href="product.html" class="site-btn btn-line">VER PRODUTO</a>
-						</div>
-					</div>
-				</li>
+                 @endif
+                 @endforeach
 			</ul>
 		</div>
 		<div class="container">
@@ -183,18 +156,17 @@
 	<div class="featured-section spad">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
+				@foreach($prod as $p)
+                 @if($p->destaque==2)
+                <div class="col-md-6">
 					<div class="featured-item">
-						<img src="{{asset('css/img/OFERTA.jpg')}}" alt="">
+						<img src="{{$p->url}}" alt="">
 						<a href="#" class="site-btn">VER MAIS</a>
 					</div>
 				</div>
-				<div class="col-md-6">
-					<div class="featured-item mb-0">
-						<img src="{{asset('css/img/OFERTA.jpg')}}" alt="">
-						<a href="#" class="site-btn">VER MAIS</a>
-					</div>
-				</div>
+                 @endif
+                 @endforeach
+				
 			</div>
 		</div>
 	</div>

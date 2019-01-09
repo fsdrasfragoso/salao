@@ -21,6 +21,12 @@ class AddNameFieldTableName extends Migration
              $table->date('validade') // Nome da coluna
                     ->nullable() // Preenchimento não obrigatório
                     ->after('fabricacao');
+            
+             $table->integer('destaque') // Nome da coluna
+                    ->nullable() // Preenchimento não obrigatório
+                    ->after('preco');
+          
+            
         });
     }
 
