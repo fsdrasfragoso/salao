@@ -70,11 +70,9 @@ use App\Produto;
 			<!-- site menu -->
 			<ul class="main-menu">
 				<li><a href="index.html">Home</a></li>
-				<li><a href="#">Shop</a></li>
-				<li><a href="#">Serviços</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Sobre nós</a></li>
-				<li><a href="contact.html">Contato</a></li>
+				  @foreach($menu as $m)
+                <li><a href="/test_ryan">{{$m->item_nome}}</a></li>
+				  @endforeach         
 			</ul>
 		</div>
 	</header>
@@ -84,9 +82,9 @@ use App\Produto;
 	<!-- Page Info -->
 	<div class="page-info-section page-info-big">
 		<div class="container">
-			<h2>Categoria</h2>
+			<h2>Categorias</h2>
 			<div class="site-breadcrumb">
-				<a href="">Home</a> / 
+                <a href="">Home</a> <?php $i = 0; ?>@foreach($cat as $c)/ <?php $i++; if($i<=5){?><a href="/cat/{{$c->id}}">{{$c->nome}}</a><?php }else{?> <br/> / <a href="/cat/{{$c->id}}">{{$c->nome}} </a> / <?php } ?>@endforeach
 				<span>Shop</span>
 			</div>
 			<img src="{{asset('css/img/categorie-page-top.png')}}" alt="" class="cata-top-pic">
