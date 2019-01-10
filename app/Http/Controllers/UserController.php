@@ -72,6 +72,13 @@ public function store(request $request){
         return response('Produto não encontrado', 404);
     }
     
+    
+      public function increment($id)
+    {
+        echo "entrou ".$id;
+    }
+
+    
 }
 
 

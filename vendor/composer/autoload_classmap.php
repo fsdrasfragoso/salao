@@ -10,6 +10,7 @@ return array(
     'App\\Categoria' => $baseDir . '/app/Categoria.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\FichaTecnica' => $baseDir . '/app/FichaTecnica.php',
     'App\\FileEntry' => $baseDir . '/app/FileEntry.php',
     'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',

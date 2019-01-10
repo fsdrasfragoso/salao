@@ -150,7 +150,7 @@
     function montarLinha(p) {
         var linha = "<tr>" +
             "<td>" + p.id + "</td>" +
-            "<td>" + p.nome + "</td>" +
+            '<td> <a href="/inrementProduto/'+p.id+'">' + p.nome + " </a> </td>" +
             "<td>" + p.estoque + "</td>" +
             "<td id='preco'>" + p.preco + "</td>" +
             "<td>" + p.classificacao + "</td>" +

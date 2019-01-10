@@ -290,7 +290,8 @@ use App\Produto;
 							<a href="blog.html"><a href="blog.html"><h5>ARTIGO DE AJUDA</h5></a>
 							<div class="bi-meta">02 Julho, 2018   |   Por Alguém Smith</div>
 							<a href="#" class="readmore">Ler Mais</a>
-						</div>
+                            </a>
+                                </div>
 					</div>
 					<div class="blog-item">
 						<div class="bi-thumb">
