@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\FichaTecnica;
 use App\Produto;
 use Storage;
 Class UserController extends Controller {
@@ -75,7 +76,11 @@ public function store(request $request){
     
       public function increment($id)
     {
-        echo "entrou ".$id;
+             $ficha = FichaTecnica::where('produto_id', $id)->get();
+          if(count($ficha)>0){
+                 return "cadastrado";
+          }
+        return view('incrementProduto',compact('id'));      ;
     }
 
     
