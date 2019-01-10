@@ -47,6 +47,9 @@ Route::get('/shop', function () {
     return view('shop');
 });
 
+
+
+
 Route::get('/teste_ryan', function () {
     return view('teste_ryan');
 });

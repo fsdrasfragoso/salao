@@ -1,7 +1,26 @@
+<?php  
+
+use App\Sl;
+use App\Categoria;
+use App\Menu_Superior;
+use Illuminate\Http\Request;
+use App\Produto;
+  $sl = Sl::all(); 
+  $cat = Categoria::all();
+  $menu = Menu_Superior::all();
+  $prod = Produto::all(); 
+?> 
+
 <!DOCTYPE html>
+
+
 <html lang="pt-br">
 <head>
-	<title>Dona Rosa - Shop</title>
+	<title> 
+      @foreach($sl as $s)
+        {{$s->nome}}
+      @endforeach   
+    </title>
 	<meta charset="UTF-8">
 	<meta name="description" content="The Plaza eCommerce Template">
 	<meta name="keywords" content="plaza, eCommerce, creative, html">
