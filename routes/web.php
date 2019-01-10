@@ -61,6 +61,9 @@ Route::get('/cart', function () {
 Route::view('/upload', "upload");
 Route::view('/novoProduto', "novoProduto");
 Route::post('/store', "UserController@store");
+Route::get('/editarproduto/{id}', "UserController@edit");
+Route::get('/inrementProduto/{id}', "UserController@increment");
+Route::post('/udateoproduto/{id}', 'UserController@update')->middleware(['auth']);
 Route::post('/produto', "ControladorProduto@store");
 
 

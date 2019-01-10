@@ -150,7 +150,7 @@
     function montarLinha(p) {
         var linha = "<tr>" +
             "<td>" + p.id + "</td>" +
-            "<td>" + p.nome + "</td>" +
+            '<td> <a href="/inrementProduto/'+p.id+'">' + p.nome + " </a> </td>" +
             "<td>" + p.estoque + "</td>" +
             "<td id='preco'>" + p.preco + "</td>" +
             "<td>" + p.classificacao + "</td>" +
@@ -159,7 +159,7 @@
             "<td><img src='"+p.url+"' height='50px' alt='"+p.nome+"'/></td>" +
             "<td>" + p.categoria.nome+ "</td>" +
             "<td>" +
-              '<button class="btn btn-sm btn-primary" onclick="editar(' + p.id + ')"> Editar </button> ' +
+              '<a href="/editarproduto/'+p.id+'" class="btn btn-sm btn-primary"> Editar </a> ' +
               '<button class="btn btn-sm btn-danger" onclick="remover(' + p.id + ')"> Apagar </button> ' +
             "</td>" +
             "</tr>";

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePOSTsTable extends Migration
+class CreateFichaTecnicasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreatePOSTsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('ficha_tecnicas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email');
-            $table->string('mensagem');
-            $table->string('arquivo');
+            $table->text('caracteristicas');
+            $table->string('marca');
+            $table->string('modelo');
+            $table->integer('produto_id')->unsigned();
+            $table->foreign('produto_id')->references('id')->on('produto');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreatePOSTsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('p_o_s_ts');
+        Schema::dropIfExists('ficha_tecnicas');
     }
 }
