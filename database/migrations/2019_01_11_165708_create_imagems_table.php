@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFichaTecnicasTable extends Migration
+class CreateImagemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateFichaTecnicasTable extends Migration
      */
     public function up()
     {
-        Schema::create('ficha_tecnicas', function (Blueprint $table) {
+        Schema::create('imagems', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('caracteristicas');
-            $table->string('marca');
-            $table->string('modelo');
+            $table->string('image');
             $table->integer('produto_id')->unsigned();
             $table->foreign('produto_id')->references('id')->on('produtos');
             $table->timestamps();
@@ -31,6 +29,6 @@ class CreateFichaTecnicasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ficha_tecnicas');
+        Schema::dropIfExists('imagems');
     }
 }

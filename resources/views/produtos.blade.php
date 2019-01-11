@@ -13,11 +13,10 @@
                     <th>Nome do Produto</th>
                     <th>Estoque</th>
                     <th>Preço</th>
-                    <th>Classificação</th>
-                    <th>Fabricação</th>
                     <th>Validade</th>
-                    <th>Imagem</th>
                     <th>Categoria</th>
+                    <th>Imagem</th>
+                    <th>Inserir Imagem</th>
                     <th> Ação</th>
                 </tr>
             </thead>
@@ -153,14 +152,13 @@
             '<td> <a href="/inrementProduto/'+p.id+'">' + p.nome + " </a> </td>" +
             "<td>" + p.estoque + "</td>" +
             "<td id='preco'>" + p.preco + "</td>" +
-            "<td>" + p.classificacao + "</td>" +
-            "<td>" + p.fabricacao + "</td>" +
             "<td>" + p.validade + "</td>" +
+             "<td>" + p.categoria.nome+ "</td>" +
             "<td><img src='"+p.url+"' height='50px' alt='"+p.nome+"'/></td>" +
-            "<td>" + p.categoria.nome+ "</td>" +
+            '<td><a href="/inserirImagem/'+p.id+'" type="button" class="btn btn-success">Inserir Imagens</a></td>' +
             "<td>" +
               '<a href="/editarproduto/'+p.id+'" class="btn btn-sm btn-primary"> Editar </a> ' +
-              '<button class="btn btn-sm btn-danger" onclick="remover(' + p.id + ')"> Apagar </button> ' +
+              '<button class="btn btn-sm btn-danger" onclick="remover(' + p.id + ')"> Apagar </button> ' +'<br/>'+
             "</td>" +
             "</tr>";
         return linha;

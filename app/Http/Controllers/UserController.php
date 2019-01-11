@@ -83,7 +83,11 @@ public function store(request $request){
         return view('incrementProduto',compact('id'));      
     }
 
-    
+    public function image($id){
+        
+        echo "entrou!";
+        
+    }
 }
 
 
