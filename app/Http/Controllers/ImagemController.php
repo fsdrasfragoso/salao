@@ -12,9 +12,11 @@ class ImagemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+       $image = Imagem::where('produto_id', $id)->get();
+          
+        return view('imageProduto',compact('image'));   
     }
 
     /**
