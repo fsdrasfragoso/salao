@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Imagem;
 use Illuminate\Http\Request;
-
+use Storage;
 class ImagemController extends Controller
 {
     /**
@@ -16,7 +16,7 @@ class ImagemController extends Controller
     {
        $image = Imagem::where('produto_id', $id)->get();
           
-        return view('imageProduto',compact('image'));   
+        return view('imageProduto',compact('image','id'));   
     }
 
     /**
@@ -24,9 +24,9 @@ class ImagemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        return view('novaImageProd',compact('id'));
     }
 
     /**
@@ -37,7 +37,19 @@ class ImagemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          $path=$request->file('image')->store('/public'); 
+    
+          $novo = "public/".$path;
+          Storage::move($path, $novo);
+        
+          $imagem = new Imagem();
+          
+        $imagem->image = "storage/".$path;
+        $imagem->produto_id = $request->input('produto_id');
+        $imagem->save();
+        
+        return redirect('inserirImagem/'.$request->input('produto_id'));
+    
     }
 
     /**

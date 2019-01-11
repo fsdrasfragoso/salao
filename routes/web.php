@@ -63,8 +63,12 @@ Route::post('/ficha', "FichaTecnicaController@store");
 Route::get('/editarproduto/{id}', "UserController@edit");
 Route::get('/inrementProduto/{id}', "UserController@increment");
 Route::get('/inserirImagem/{id}', "ImagemController@index");
+
+Route::get('/imagem/novo/{id}', "ImagemController@create");
+
 Route::post('/udateoproduto/{id}', 'UserController@update')->middleware(['auth']);
 Route::post('/produto', "ControladorProduto@store");
+Route::post('/image', "ImagemController@store");
 
 
 Route::get('/arquivos', 'PostControlador@index');
