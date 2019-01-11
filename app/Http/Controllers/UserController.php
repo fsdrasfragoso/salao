@@ -80,7 +80,7 @@ public function store(request $request){
           if(count($ficha)>0){
                  return "cadastrado";
           }
-        return view('incrementProduto',compact('id'));      ;
+        return view('incrementProduto',compact('id'));      
     }
 
     

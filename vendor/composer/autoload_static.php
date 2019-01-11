@@ -50,6 +50,10 @@ class ComposerStaticInita8273c70226349bf9814b81f36689507
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
+        'U' => 
+        array (
+            'Unisharp\\Ckeditor\\' => 18,
+        ),
         'T' => 
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
@@ -181,6 +185,10 @@ class ComposerStaticInita8273c70226349bf9814b81f36689507
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Unisharp\\Ckeditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/unisharp/laravel-ckeditor',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -446,6 +454,7 @@ class ComposerStaticInita8273c70226349bf9814b81f36689507
         'App\\Http\\Controllers\\ControladorProduto' => __DIR__ . '/../..' . '/app/Http/Controllers/ControladorProduto.php',
         'App\\Http\\Controllers\\Controlador_Menu_Superior' => __DIR__ . '/../..' . '/app/Http/Controllers/Controlador_Menu_Superior.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\FichaTecnicaController' => __DIR__ . '/../..' . '/app/Http/Controllers/FichaTecnicaController.php',
         'App\\Http\\Controllers\\FileEntriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/FileEntriesController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PostControlador' => __DIR__ . '/../..' . '/app/Http/Controllers/PostControlador.php',
@@ -4108,6 +4117,7 @@ class ComposerStaticInita8273c70226349bf9814b81f36689507
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'Unisharp\\Ckeditor\\ServiceProvider' => __DIR__ . '/..' . '/unisharp/laravel-ckeditor/ServiceProvider.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',

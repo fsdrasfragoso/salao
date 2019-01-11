@@ -35,7 +35,14 @@ class FichaTecnicaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ficha = new FichaTecnica();
+        
+        $ficha->caracteristicas = $request->input('caracteristicas');
+        $ficha->marca = $request->input('marca');
+        $ficha->modelo = $request->input('modelo');
+        $ficha->produto_id = $request->input('produto_id');
+        $ficha->save();
+        return redirect('/produtos');
     }
 
     /**
