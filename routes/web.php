@@ -55,26 +55,26 @@ Route::get('/teste_ryan', function () {
 });
 
 
-Route::view('/upload', "upload");
+Route::view('/upload', "upload")->middleware(['auth']);
 Route::view('/cart', "cart");
-Route::view('/novoProduto', "novoProduto");
-Route::post('/store', "UserController@store");
-Route::post('/ficha', "FichaTecnicaController@store");
-Route::get('/editarproduto/{id}', "UserController@edit");
-Route::get('/inrementProduto/{id}', "UserController@increment");
-Route::get('/inserirImagem/{id}', "ImagemController@index");
+Route::view('/novoProduto', "novoProduto")->middleware(['auth']);
+Route::post('/store', "UserController@store")->middleware(['auth']);
+Route::post('/ficha', "FichaTecnicaController@store")->middleware(['auth']);
+Route::get('/editarproduto/{id}', "UserController@edit")->middleware(['auth']);
+Route::get('/inrementProduto/{id}', "UserController@increment")->middleware(['auth']);
+Route::get('/inserirImagem/{id}', "ImagemController@index")->middleware(['auth']);
 
-Route::get('/imagem/novo/{id}', "ImagemController@create");
+Route::get('/imagem/novo/{id}', "ImagemController@create")->middleware(['auth']);
 
 Route::post('/udateoproduto/{id}', 'UserController@update')->middleware(['auth']);
-Route::post('/produto', "ControladorProduto@store");
-Route::post('/image', "ImagemController@store");
-Route::get('/imagem/apagar/{id}',"ImagemController@destroy");
+Route::post('/produto', "ControladorProduto@store")->middleware(['auth']);
+Route::post('/image', "ImagemController@store")->middleware(['auth']);
+Route::get('/imagem/apagar/{id}',"ImagemController@destroy")->middleware(['auth']);
 
 
-Route::get('/arquivos', 'PostControlador@index');
-Route::post('/arquivos', 'PostControlador@store');
-Route::delete('/arquivos/{id}', 'PostControlador@destroy');
-Route::get('/arquivos/{id}', 'PostControlador@download');
+Route::get('/arquivos', 'PostControlador@index')->middleware(['auth']);
+Route::post('/arquivos', 'PostControlador@store')->middleware(['auth']);
+Route::delete('/arquivos/{id}', 'PostControlador@destroy')->middleware(['auth']);
+Route::get('/arquivos/{id}', 'PostControlador@download')->middleware(['auth']);
 
 
