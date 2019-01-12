@@ -31,6 +31,8 @@ Route::post('/categorias/{id}', 'ControladorCategoria@update')->middleware(['aut
 Route::post('/sl/{id}', 'SlController@update')->middleware(['auth']);
 Route::get('/test', 'ControladorProduto@index')->middleware(['auth']);
 
+Route::get('/produtoID/{id}', 'ControladorProduto@showProd');
+
 Route::get('/CadastroMenu', 'Controlador_Menu_Superior@index')->middleware(['auth']);
 Route::get('/CadastroMenu/novo_item', 'Controlador_Menu_Superior@create')->middleware(['auth']); 
 Route::post('/CadastroMenu', 'Controlador_Menu_Superior@store')->middleware(['auth']);
@@ -57,6 +59,7 @@ Route::get('/teste_ryan', function () {
 
 Route::view('/upload', "upload")->middleware(['auth']);
 Route::view('/cart', "cart");
+
 Route::view('/novoProduto', "novoProduto")->middleware(['auth']);
 Route::post('/store', "UserController@store")->middleware(['auth']);
 Route::post('/ficha', "FichaTecnicaController@store")->middleware(['auth']);

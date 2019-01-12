@@ -83,9 +83,17 @@ class ControladorProduto extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function showProd($id)
     {
-        //
+        $prod = Produto::find($id);
+        if (isset($prod)) {
+            //return view('produto', compact('produtos'));
+            return view('exibirProduto', compact('prod')); 
+           // echo "Lula Ladrão";
+        }
+        return response('Produto não encontrado', 404);
+            
+            
     }
 
     /**
