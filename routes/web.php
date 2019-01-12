@@ -69,6 +69,7 @@ Route::get('/imagem/novo/{id}', "ImagemController@create");
 Route::post('/udateoproduto/{id}', 'UserController@update')->middleware(['auth']);
 Route::post('/produto', "ControladorProduto@store");
 Route::post('/image', "ImagemController@store");
+Route::get('/imagem/apagar/{id}',"ImagemController@destroy");
 
 
 Route::get('/arquivos', 'PostControlador@index');

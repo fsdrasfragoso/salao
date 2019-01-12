@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Produto;
-
+use Storage;
 class ControladorProduto extends Controller
     {
     
@@ -125,6 +125,8 @@ class ControladorProduto extends Controller
     {
         $prod = Produto::find($id);
         if (isset($prod)) {
+            $d = "public/../".$prod->url;
+            Storage::delete($d);
             $prod->delete();
             return response('OK', 200);
         }
@@ -135,7 +137,7 @@ class ControladorProduto extends Controller
          $produtos = Produto::where('categoria_id', $categoria_id)->get();
                         
                         
-return view('produto', compact('produtos'));
+        return view('produto', compact('produtos'));
         
     }
     

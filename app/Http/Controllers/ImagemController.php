@@ -92,8 +92,20 @@ class ImagemController extends Controller
      * @param  \App\Imagem  $imagem
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Imagem $imagem)
+    public function destroy($id)
     {
-        //
+          $img = Imagem::find($id);
+        
+          $prod = $img->produto_id;
+        if (isset($img)) {
+            $d = "public/../".$img->image;
+        
+      
+            Storage::delete($d);
+            
+            $img->delete();
+            return redirect('/inserirImagem/'.$prod);
+        }
+        return response('Produto não encontrado', 404);
     }
 }
