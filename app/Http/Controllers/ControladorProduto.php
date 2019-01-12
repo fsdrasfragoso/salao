@@ -70,9 +70,9 @@ class ControladorProduto extends Controller
      */
     public function show($id)
     {
-        $prod = Produto::find($id);
+         $prod = Produto::find($id);
         if (isset($prod)) {
-            return json_encode($prod);            
+                return json_encode($prod);  
         }
         return response('Produto não encontrado', 404);
     }
@@ -85,11 +85,13 @@ class ControladorProduto extends Controller
      */
     public function showProd($id)
     {
-        $prod = Produto::find($id);
+       
+         $prod = Produto::with(['imagem','ficah_tecnica'])->where('id',$id)->get();
         if (isset($prod)) {
             //return view('produto', compact('produtos'));
-            return view('exibirProduto', compact('prod')); 
-           // echo "Lula Ladrão";
+         return view('exibirProduto', compact('prod')); 
+          //echo "Lula Ladrão";
+        //return json_encode($prod);        
         }
         return response('Produto não encontrado', 404);
             
