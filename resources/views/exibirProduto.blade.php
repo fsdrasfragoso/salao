@@ -13,7 +13,11 @@ use Illuminate\Http\Request;
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<title>Produto - Dona Rosa</title>
+	<title>
+    @foreach($sl as $s)
+           {{$s->nome}}
+    @endforeach    
+    </title>
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
