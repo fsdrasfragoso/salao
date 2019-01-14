@@ -127,6 +127,7 @@ use App\Produto;
 			<ul class="slidee">
 				@foreach($prod as $p)
                  @if($p->destaque==1)
+                <a href="/produtoID/{{$p->id}}">
                 <li>
 					<div class="intro-item">
 						<figure>
@@ -139,6 +140,7 @@ use App\Produto;
 						</div>
                     </div>
 				</li>
+                    </a>
                  @endif
                  @endforeach
 			</ul>
@@ -160,12 +162,14 @@ use App\Produto;
 			<div class="row">
 				@foreach($prod as $p)
                  @if($p->destaque==2)
+                <a href="/produtoID/{{$p->id}}">
                 <div class="col-md-6">
 					<div class="featured-item">
 						<img src="{{$p->url}}" alt="">
 						<a href="#" class="site-btn">VER MAIS</a>
 					</div>
 				</div>
+                </a>
                  @endif
                  @endforeach
 				
@@ -186,12 +190,14 @@ use App\Produto;
 			<div class="row" id="product-filter">
 				@foreach($prod as $p)
                  @if($p->destaque==3)
+               
                 <div class="mix col-lg-3 col-md-6 best">
+                    
 					<div class="product-item">
 						<figure>
 							<img src="{{$p->url}}" alt="">
 							<div class="pi-meta">
-								<a href="product.html"><div class="pi-m-left">
+								<a href="/produtoID/{{$p->id}}"><div class="pi-m-left">
 									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
 									<p>Vista rápida</p>
 								</div></a>
@@ -207,7 +213,9 @@ use App\Produto;
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>
+                       
 				</div>
+               
                 @endif
                 @endforeach
                 
@@ -218,7 +226,7 @@ use App\Produto;
 						<figure>
 							<img src="{{$p->url}}" alt="">
 							<div class="pi-meta">
-								<a href="product.html"><div class="pi-m-left">
+								<a href="/produtoID/{{$p->id}}"><div class="pi-m-left">
 									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
 									<p>Vista rápida</p>
 								</div></a>
@@ -245,7 +253,7 @@ use App\Produto;
 						<figure>
 							<img src="{{$p->url}}" alt="">
 							<div class="pi-meta">
-								<a href="product.html"><div class="pi-m-left">
+								<a href="/produtoID/{{$p->id}}"><div class="pi-m-left">
 									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
 									<p>Vista rápida</p>
 								</div></a>

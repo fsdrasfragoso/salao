@@ -177,7 +177,7 @@
                  
                  <?php  if($i<3){ ?>
                 <div class="col-lg-3">
-                    	
+                   <a href="/produtoID/{{$po[$i]->id}}"> 	
 					<div class="product-item">
 						<figure>
 							<img src="../{{$po[$i]->url}}" alt="">
@@ -198,7 +198,9 @@
 							<p>R${{number_format($po[$i]->preco,2,",",".")}}</p>
 							<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
 						</div>
+                        
 					</div>
+                       </a>
 				</div>
                  <?php  $i++;} ?>  
                  @endforeach
@@ -206,6 +208,7 @@
 				@foreach($prodOfertas as $po)
                 @if($po->destaque==2)
 				<div class="col-lg-3">
+                    <a href="/produtoID/{{$po->id}}"> 	
 					<div class="product-item">
 						<figure>
 							<img src="../{{$po->url}}" alt="">
@@ -227,6 +230,7 @@
 							<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
 						</div>
 					</div>
+                    </a>
 				</div>
                 @endif
                 @endforeach

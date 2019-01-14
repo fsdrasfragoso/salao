@@ -118,6 +118,7 @@ use App\Produto;
 			</div>
 			<div class="row">
 				@foreach($prod as $p)
+                <a href="/produtoID/{{$p->id}}">
                 <div class="col-lg-3">
 					<div class="product-item">
 						<figure>
@@ -139,7 +140,9 @@ use App\Produto;
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>
+               
 				</div>
+             </a> 
                 @endforeach
 				
 			<div class="site-pagination">
