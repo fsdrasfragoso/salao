@@ -56,11 +56,13 @@ use App\Produto;
 	<!-- Cabeçalho -->
 	<header class="header-section header-normal">
 		<div class="container-fluid">
-			<!-- Logo -->
-			<div class="site-logo">
-				<img src="img/sad.png" alt="logo">
-			</div>
-			<!-- responsivo -->
+			 @foreach($sl as $s)
+            <!-- Logo -->
+			<div class="logo">
+<th><span class="myButton">SALÃO de Beleza </span></th><th><span class="myButton1">{{$s->nome}}</span></th>
+</div> <br/>
+			@endforeach
+            <!-- responsivo -->
 			<div class="nav-switch">
 				<i class="fa fa-bars"></i>
 			</div>

@@ -1,3 +1,15 @@
+<?php
+use App\Sl;
+use App\Categoria;
+use App\Menu_Superior;
+use Illuminate\Http\Request;
+
+  $sl = Sl::all(); 
+  $cat = Categoria::all();
+  $menu = Menu_Superior::all();
+
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -38,9 +50,12 @@
 	<header class="header-section header-normal">
 		<div class="container-fluid">
 			<!-- logo -->
-			<div class="site-logo">
-				<img src="../css/img/sad.png" alt="logo">
-			</div>
+			@foreach($sl as $s)
+            <!-- Logo -->
+			<div class="logo">
+<th><span class="myButton">SALÃO de Beleza </span></th><th><span class="myButton1">{{$s->nome}}</span></th>
+</div> <br/>
+			@endforeach
 			<!-- responsive -->
 			<div class="nav-switch">
 				<i class="fa fa-bars"></i>

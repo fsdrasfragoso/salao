@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/index', function () {
     return view('index');
 });
 
@@ -52,7 +52,7 @@ Route::get('/shop', function () {
 
 
 
-Route::get('/teste_ryan', function () {
+Route::get('/', function () {
     return view('teste_ryan');
 });
 

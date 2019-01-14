@@ -60,11 +60,15 @@ use App\Produto;
 	<header class="header-section">
 		<div class="container-fluid">
 			<!-- logo -->
-			<div class="site-logo">
-            @foreach($sl as $s)
-                 {{$s->nome}}
+             @foreach($sl as $s)
+			<div class="logo">
+<th><span class="myButton">SALÃO de Beleza </span></th><th><span class="myButton1">{{$s->nome}}</span></th>
+</div> <br/>
+
+           
+                 
             @endforeach 
-			</div>
+			
 			<!-- responsivo -->
             
     
