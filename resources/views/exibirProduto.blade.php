@@ -168,13 +168,20 @@
 			</div>
 		
 			<div class="row">
-				@foreach($prodOfertas as $po)
-                  @if($po->destaque==2)
+                <?php 
+                  $op = array_reverse(array($prodOfertas));
+                $i = 0;
+                         
+                  ?>
+				@foreach($op as $po)
+                 
+                 <?php  if($i<3){ ?>
                 <div class="col-lg-3">
                     	
 					<div class="product-item">
 						<figure>
-							<img src="../css/img/products/1.jpg" alt="">
+							<img src="../{{$po[$i]->url}}" alt="">
+                            <div class="bache">NOVO!</div>
 							<div class="pi-meta">
 								<div class="pi-m-left">
 									<img src="../css/img/icons/eye.png" alt="">
@@ -187,63 +194,21 @@
 							</div>
 						</figure>
 						<div class="product-info">
-							<h6>PRODUTO</h6>
-							<p>R$00.00</p>
+							<h6>{{$po[$i]->nome}}</h6>
+							<p>R${{number_format($po[$i]->preco,2,",",".")}}</p>
 							<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
 						</div>
 					</div>
 				</div>
-                 @endif
+                 <?php  $i++;} ?>  
                  @endforeach
+				
+				@foreach($prodOfertas as $po)
+                @if($po->destaque==2)
 				<div class="col-lg-3">
 					<div class="product-item">
 						<figure>
-							<img src="../css/img/products/2.jpg" alt="">
-							<div class="bache">NOVO!</div>
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="../css/img/icons/eye.png" alt="">
-									<p>Vista rápida</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="../css/img/icons/heart.png" alt="">
-									<p>Salvar</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>PRODUTO</h6>
-							<p>R$00.00</p>
-							<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="product-item">
-						<figure>
-							<img src="../css/img/products/3.jpg" alt="">
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="../css/img/icons/eye.png" alt="">
-									<p>Vista rápida</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="../css/img/icons/heart.png" alt="">
-									<p>Salvar</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>PRODUTO</h6>
-							<p>R$00.00</p>
-							<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="product-item">
-						<figure>
-							<img src="../css/img/products/4.jpg" alt="">
+							<img src="../{{$po->url}}" alt="">
 							<div class="bache sale">OFERTA!</div>
 							<div class="pi-meta">
 								<div class="pi-m-left">
@@ -257,12 +222,14 @@
 							</div>
 						</figure>
 						<div class="product-info">
-							<h6>PRODUTO</h6>
-							<p>R$00.00 <span>R̶$̶0̶0̶.̶0̶0̶</span></p>
+							<h6>{{$po->nome}}</h6>
+                            <p>R${{number_format($po->preco,2,",",".")}} <span><strike><?php $f = $po->preco *2.30; ?>R̶$̶{{number_format($f,2,",",".")}}</strike></span></p>
 							<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
 						</div>
 					</div>
 				</div>
+                @endif
+                @endforeach
 			</div>
 		</div>
 	</div> 
