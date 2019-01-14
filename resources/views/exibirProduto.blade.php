@@ -154,19 +154,24 @@
 								<span>(2 avaliações)</span>
 							</div>
 						</div>
-						@foreach($p->ficah_tecnica as $ficha)
-                        <p>Marca: {{$ficha->modelo}}</p>
-                        <p>Modelo: {{$ficha->marca}} </p>						
-					  <?php echo '<p>Caracteristicas:</p>'.$ficha->caracteristicas ?>
-                        @endforeach
-                        <div class="size-choose">
+                         <div class="size-choose">
 						<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
 					</div>
+						@foreach($p->ficah_tecnica as $ficha)
+                        <p>Marca: {{$ficha->modelo}}</p>
+                        <p>Modelo: {{$ficha->marca}} </p>
+                        
+					  <?php echo '<p>Caracteristicas:</p>'.$ficha->caracteristicas ?>
+                        @endforeach
+                       
 				</div>
 			</div>
-			
+		
 			<div class="row">
-				<div class="col-lg-3">
+				@foreach($prodOfertas as $po)
+                  @if($po->destaque==2)
+                <div class="col-lg-3">
+                    	
 					<div class="product-item">
 						<figure>
 							<img src="../css/img/products/1.jpg" alt="">
@@ -188,6 +193,8 @@
 						</div>
 					</div>
 				</div>
+                 @endif
+                 @endforeach
 				<div class="col-lg-3">
 					<div class="product-item">
 						<figure>
@@ -259,6 +266,7 @@
 			</div>
 		</div>
 	</div> 
+       
 	<!-- Page end -->
 
 

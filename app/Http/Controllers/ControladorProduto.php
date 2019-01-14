@@ -89,9 +89,14 @@ class ControladorProduto extends Controller
          $prod = Produto::with(['categoria','imagem','ficah_tecnica'])->where('id',$id)->get();
         if (isset($prod)) {
             //return view('produto', compact('produtos'));
-         return view('exibirProduto', compact('prod')); 
+         $prodOfertas;
+            foreach($prod as $p){
+                $prodOfertas = Produto::where('categoria_id', $p->categoria_id)->get();
+            }
+            
+            return view('exibirProduto', compact('prod','prodOfertas')); 
           //echo "Lula Ladrão";
-        //return json_encode($prod);        
+        //return json_encode($prodOfertas);        
         }
         return response('Produto não encontrado', 404);
             
