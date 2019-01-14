@@ -7,7 +7,7 @@
 	<meta name="keywords" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- icone -->   
-	<link href="img/logo%20a.png" rel="shortcut icon"/>
+	<link href="../css/img/logo%20a.png" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
     
@@ -28,6 +28,7 @@
 
 </head>
 <body>
+     @foreach($prod as $p)
 	<!-- Carregar -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -38,14 +39,14 @@
 		<div class="container-fluid">
 			<!-- logo -->
 			<div class="site-logo">
-				<img src="img/sad.png" alt="logo">
+				<img src="../css/img/sad.png" alt="logo">
 			</div>
 			<!-- responsive -->
 			<div class="nav-switch">
 				<i class="fa fa-bars"></i>
 			</div>
 			<div class="header-right">
-				<a href="cart.html" class="card-bag"><img src="img/icons/bag.png" alt=""><span>0</span></a>
+				<a href="cart.html" class="card-bag"><img src="../css/img/icons/bag.png" alt=""><span>0</span></a>
 			</div>
 			<!-- site menu -->
 			<ul class="main-menu">
@@ -67,10 +68,12 @@
 			<div class="site-breadcrumb">
 				<a href="">Home</a> / 
 				<a href="">Shop</a> / 
-				<a href="">Categoria</a> / 
-				<span>Produto</span>
+				 
+                <a href="">{{$p->categoria->nome}}</a> / 
+              
+				<span>{{$p->nome}}</span>
 			</div>
-			<img src="img/page-info-art.png" alt="" class="page-info-art">
+			<img src="../css/img/page-info-art.png" alt="" class="page-info-art">
 		</div>
 	</div>
 	<!-- Page Info end -->
@@ -80,37 +83,83 @@
 	<div class="page-area product-page spad">
 		<div class="container">
 			<div class="row">
+               
 				<div class="col-lg-6">
-					<figure>
-						<img class="product-big-img" src="img/product/1.jpg" alt="">
+					
+                    <figure>
+						<img class="product-big-img" src="../{{$p->url}}" alt="{{$p->nome}}">
 					</figure>
+                   
 					<div class="product-thumbs">
-						<div class="product-thumbs-track">
-							<div class="pt" data-imgbigurl="img/product/1.jpg"><img src="img/product/thumb-1.jpg" alt=""></div>
-							<div class="pt" data-imgbigurl="img/product/2.jpg"><img src="img/product/thumb-2.jpg" alt=""></div>
-							<div class="pt" data-imgbigurl="img/product/3.jpg"><img src="img/product/thumb-3.jpg" alt=""></div>
-							<div class="pt" data-imgbigurl="img/product/4.jpg"><img src="img/product/thumb-4.jpg" alt=""></div>
+						
+                        <div class="product-thumbs-track">
+							<div class="pt" data-imgbigurl="../{{$p->url}}"><img src="../{{$p->url}}" alt="{{$p->nome}}"></div>
+							@foreach($p->imagem as $img)
+                            <div class="pt" data-imgbigurl="../{{$img->image}}"><img src="../{{$img->image}}" alt="{{$p->nome}}"></div>
+							@endforeach
 						</div>
+                        
 					</div>
 				</div>
+                 
 				<div class="col-lg-6">
 					<div class="product-content">
-						<h2>PRODUTO</h2>
+						<h2>{{$p->nome}}</h2>
 						<div class="pc-meta">
-							<h4 class="price">R$00.00</h4>
+							<h4 class="price">R${{number_format($p->preco,2,",",".")}}</h4>
 							<div class="review">
-								<div class="rating">
+								@if($p->classificacao>=5)
+                                <div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+                                @elseif($p->classificacao==4)
+                                <div class="rating">
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star is-fade"></i>
 								</div>
+                                
+                                @elseif($p->classificacao==3)
+                                <div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star is-fade"></i>
+									<i class="fa fa-star is-fade"></i>
+								</div>
+                              
+                                @elseif($p->classificacao==2)
+                                <div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star is-fade"></i>
+									<i class="fa fa-star is-fade"></i>
+									<i class="fa fa-star is-fade"></i>
+								</div>
+                                @else
+                                <div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star is-fade"></i>
+									<i class="fa fa-star is-fade"></i>
+									<i class="fa fa-star is-fade"></i>
+									<i class="fa fa-star is-fade"></i>
+								</div>
+                                @endif 
 								<span>(2 avaliações)</span>
 							</div>
 						</div>
-						<p>Descrição</p>
-						<div class="size-choose">
+						@foreach($p->ficah_tecnica as $ficha)
+                        <p>Marca: {{$ficha->modelo}}</p>
+                        <p>Modelo: {{$ficha->marca}} </p>						
+					  <?php echo '<p>Caracteristicas:</p>'.$ficha->caracteristicas ?>
+                        @endforeach
+                        <div class="size-choose">
 						<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
 					</div>
 				</div>
@@ -120,14 +169,14 @@
 				<div class="col-lg-3">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/1.jpg" alt="">
+							<img src="../css/img/products/1.jpg" alt="">
 							<div class="pi-meta">
 								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
+									<img src="../css/img/icons/eye.png" alt="">
 									<p>Vista rápida</p>
 								</div>
 								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
+									<img src="../css/img/icons/heart.png" alt="">
 									<p>Salvar</p>
 								</div>
 							</div>
@@ -142,15 +191,15 @@
 				<div class="col-lg-3">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/2.jpg" alt="">
+							<img src="../css/img/products/2.jpg" alt="">
 							<div class="bache">NOVO!</div>
 							<div class="pi-meta">
 								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
+									<img src="../css/img/icons/eye.png" alt="">
 									<p>Vista rápida</p>
 								</div>
 								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
+									<img src="../css/img/icons/heart.png" alt="">
 									<p>Salvar</p>
 								</div>
 							</div>
@@ -165,14 +214,14 @@
 				<div class="col-lg-3">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/3.jpg" alt="">
+							<img src="../css/img/products/3.jpg" alt="">
 							<div class="pi-meta">
 								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
+									<img src="../css/img/icons/eye.png" alt="">
 									<p>Vista rápida</p>
 								</div>
 								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
+									<img src="../css/img/icons/heart.png" alt="">
 									<p>Salvar</p>
 								</div>
 							</div>
@@ -187,15 +236,15 @@
 				<div class="col-lg-3">
 					<div class="product-item">
 						<figure>
-							<img src="img/products/4.jpg" alt="">
+							<img src="../css/img/products/4.jpg" alt="">
 							<div class="bache sale">OFERTA!</div>
 							<div class="pi-meta">
 								<div class="pi-m-left">
-									<img src="img/icons/eye.png" alt="">
+									<img src="../css/img/icons/eye.png" alt="">
 									<p>Vista rápida</p>
 								</div>
 								<div class="pi-m-right">
-									<img src="img/icons/heart.png" alt="">
+									<img src="../css/img/icons/heart.png" alt="">
 									<p>Salvar</p>
 								</div>
 							</div>
@@ -222,11 +271,11 @@
 						<img src="img/logo.png" class="footer-logo" alt="">
 						<p>Breve descrição</p>
 						<div class="cards">
-							<img src="img/cards/5.png" alt="">
-							<img src="img/cards/4.png" alt="">
-							<img src="img/cards/3.png" alt="">
-							<img src="img/cards/2.png" alt="">
-							<img src="img/cards/1.png" alt="">
+							<img src="../css/img/cards/5.png" alt="">
+							<img src="../css/img/cards/4.png" alt="">
+							<img src="../css/img/cards/3.png" alt="">
+							<img src="../css/img/cards/2.png" alt="">
+							<img src="../css/img/cards/1.png" alt="">
 						</div>
 					</div>
 				</div>
@@ -295,7 +344,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</footer>
 	<!-- Footer section end -->
 
-
+@endforeach
 	<!--====== Javascripts & Jquery ======-->
 	 <script src="{{ asset('js/app.js')}}" type="text/javascript"> </script> 
 	

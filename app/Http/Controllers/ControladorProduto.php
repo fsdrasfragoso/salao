@@ -86,7 +86,7 @@ class ControladorProduto extends Controller
     public function showProd($id)
     {
        
-         $prod = Produto::with(['imagem','ficah_tecnica'])->where('id',$id)->get();
+         $prod = Produto::with(['categoria','imagem','ficah_tecnica'])->where('id',$id)->get();
         if (isset($prod)) {
             //return view('produto', compact('produtos'));
          return view('exibirProduto', compact('prod')); 
