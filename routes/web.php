@@ -52,6 +52,7 @@ Route::get('/', function () {
 
 Route::view('/upload', "upload")->middleware(['auth']);
 Route::view('/cart', "cart");
+Route::view('/servicos', "servicos");
 
 Route::view('/novoProduto', "novoProduto")->middleware(['auth']);
 //Route::view('/EditarFicha', "EditarFicha")->middleware(['auth']);
