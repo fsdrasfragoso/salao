@@ -1,0 +1,119 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+body {
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+@media only screen and (max-width: 576px) {
+    .logo-menu{
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+	.categorie-filter-warp select {
+		margin-bottom: 15px;
+		width: 100%;
+		margin-left: 0;
+	}
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+/* Instagram */
+.fa-instagram {
+  background: #3B6999 ;
+  color: white;
+}
+.myButton {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0);
+	background-color:#ffffff;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#252525;
+	font-family:Arial;
+	font-size:24px;
+	padding:1.5px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #404040;
+	text-transform: uppercase;
+    position: relative;
+    z-index: 100;
+}
+
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton1 {
+	background-color:transparent;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:24px;
+	padding:1.5px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #404040;
+	text-transform: uppercase;
+    position: relative;
+    z-index: 100;
+}
+.myButton1:active {
+	position:relative;
+	top:1px;
+}
