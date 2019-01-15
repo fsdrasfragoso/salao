@@ -184,10 +184,14 @@ use Illuminate\Http\Request;
 							</div>
 						</div>
                          <div class="size-choose">
-						<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
+						<a href="/editarFichaTecnica/{{$p->id}}" class="site-btn btn-line">Editar Ficha Tecnica</a>
 					</div>
 						@foreach($p->ficah_tecnica as $ficha)
+                         <div class="size-choose">
+						<a href="/editarFichaTecnica/{{$ficha->id}}" class="site-btn btn-line">Editar Ficha Tecnica</a>
+					</div>
                         <p>Marca: {{$ficha->modelo}}</p>
+                        
                         <p>Modelo: {{$ficha->marca}} </p>
                         
 					  <?php echo '<p>Caracteristicas:</p>'.$ficha->caracteristicas ?>
@@ -196,147 +200,7 @@ use Illuminate\Http\Request;
 				</div>
 			</div>
 		
-			<div class="row">
-                <?php 
-                  $op = array_reverse(array($prodOfertas));
-                $i = 0;
-                         
-                  ?>
-				@foreach($op as $po)
-                 
-                 <?php  if($i<3){ ?>
-                <div class="col-lg-3">
-                   <a href="/produtoID/{{$po[$i]->id}}"> 	
-					<div class="product-item">
-						<figure>
-							<img src="../{{$po[$i]->url}}" alt="">
-                            <div class="bache">NOVO!</div>
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="../css/img/icons/eye.png" alt="">
-									<p>Vista rápida</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="../css/img/icons/heart.png" alt="">
-									<p>Salvar</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>{{$po[$i]->nome}}</h6>
-							<p>R${{number_format($po[$i]->preco,2,",",".")}}</p>
-							<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
-						</div>
-                        
-					</div>
-                       </a>
-				</div>
-                 <?php  $i++;} ?>  
-                 @endforeach
-				
-				@foreach($prodOfertas as $po)
-                @if($po->destaque==2)
-				<div class="col-lg-3">
-                    <a href="/produtoID/{{$po->id}}"> 	
-					<div class="product-item">
-						<figure>
-							<img src="../{{$po->url}}" alt="">
-							<div class="bache sale">OFERTA!</div>
-							<div class="pi-meta">
-								<div class="pi-m-left">
-									<img src="../css/img/icons/eye.png" alt="">
-									<p>Vista rápida</p>
-								</div>
-								<div class="pi-m-right">
-									<img src="../css/img/icons/heart.png" alt="">
-									<p>Salvar</p>
-								</div>
-							</div>
-						</figure>
-						<div class="product-info">
-							<h6>{{$po->nome}}</h6>
-                            <p>R${{number_format($po->preco,2,",",".")}} <span><strike><?php $f = $po->preco *2.30; ?>R̶$̶{{number_format($f,2,",",".")}}</strike></span></p>
-							<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
-						</div>
-					</div>
-                    </a>
-				</div>
-                @endif
-                @endforeach
-			</div>
-		</div>
-	</div> 
-       
-	<!-- Page end -->
-
-
-	<!-- Footer top section -->	
-	<section class="footer-top-section home-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-8 col-sm-12">
-					<div class="footer-widget about-widget">
-						<img src="../css/img/logo.png" class="footer-logo" alt="">
-						<p>Breve descrição</p>
-						<div class="cards">
-							<img src="../css/img/cards/5.png" alt="">
-							<img src="../css/img/cards/4.png" alt="">
-							<img src="../css/img/cards/3.png" alt="">
-							<img src="../css/img/cards/2.png" alt="">
-							<img src="../css/img/cards/1.png" alt="">
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-4 col-sm-6">
-					<div class="footer-widget">
-						<h6 class="fw-title">Algo</h6>
-						<ul>
-							<li><a href="#">Algo</a></li>
-							<li><a href="#">Algo</a></li>
-							<li><a href="#">Algo</a></li>
-							<li><a href="#">Algo</a></li>
-							<li><a href="#">Algo</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-4 col-sm-6">
-					<div class="footer-widget">
-						<h6 class="fw-title">Algo</h6>
-						<ul>
-							<li><a href="#">Algo</a></li>
-							<li><a href="#">Algo</a></li>
-							<li><a href="#">Algo</a></li>
-							<li><a href="#">Algo</a></li>
-							<li><a href="#">Algo</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-4 col-sm-6">
-					<div class="footer-widget">
-						<h6 class="fw-title">Importante</h6>
-						<ul>
-							<li><a href="#">Sobre nós</a></li>
-							<li><a href="#">Rastreie sua encomenda</a></li>
-							<li><a href="#">Serviços</a></li>
-							<li><a href="#">Métodos de envio</a></li>
-							<li><a href="#">Blog</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-4 col-sm-6">
-					<div class="footer-widget">
-						<h6 class="fw-title">Contato</h6>
-						<div class="text-box">
-							<p>Nome da Empresa </p>
-							<p>Endereço da Empresa </p>
-							<p>Número para contato</p>
-							<p>Email da empresa</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+			
 	<!-- Footer top section end -->	
 
 

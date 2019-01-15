@@ -78,7 +78,8 @@ public function store(request $request){
     {
              $ficha = FichaTecnica::where('produto_id', $id)->get();
           if(count($ficha)>0){
-                 return "cadastrado";
+              $prod = Produto::with(['categoria','imagem','ficah_tecnica'])->where('id',$id)->get();     
+              return view('EditarFicha',compact('prod'));
           }
         return view('incrementProduto',compact('id'));      
     }

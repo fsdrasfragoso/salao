@@ -38,6 +38,7 @@ Route::get('/CadastroMenu/novo_item', 'Controlador_Menu_Superior@create')->middl
 Route::post('/CadastroMenu', 'Controlador_Menu_Superior@store')->middleware(['auth']);
 Route::get('/CadastroMenu/apagar_item/{id}', 'Controlador_Menu_Superior@destroy')->middleware(['auth']);
 Route::get('/CadastroMenu/editar/{id}', 'Controlador_Menu_Superior@edit')->middleware(['auth']);
+Route::get('/editarFichaTecnica/{id}', 'FichaTecnicaController@edit')->middleware(['auth']);
 Route::post('/CadastroMenu/{id}', 'Controlador_Menu_Superior@update')->middleware(['auth']);
 Auth::routes();
 
@@ -61,6 +62,7 @@ Route::view('/upload', "upload")->middleware(['auth']);
 Route::view('/cart', "cart");
 
 Route::view('/novoProduto', "novoProduto")->middleware(['auth']);
+//Route::view('/EditarFicha', "EditarFicha")->middleware(['auth']);
 Route::post('/store', "UserController@store")->middleware(['auth']);
 Route::post('/ficha', "FichaTecnicaController@store")->middleware(['auth']);
 Route::get('/editarproduto/{id}', "UserController@edit")->middleware(['auth']);

@@ -62,9 +62,17 @@ class FichaTecnicaController extends Controller
      * @param  \App\FichaTecnica  $fichaTecnica
      * @return \Illuminate\Http\Response
      */
-    public function edit(FichaTecnica $fichaTecnica)
+    public function edit($id)
     {
-        //
+        
+       $ficha = FichaTecnica::find($id);
+         if (isset($ficha)) {
+             //return json_encode($ficha);
+             
+             return view('alterarFicha',compact('ficha'));  
+        }
+        return response('Problemas para encontrar a Ficha', 404);
+        
     }
 
     /**

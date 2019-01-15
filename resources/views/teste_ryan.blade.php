@@ -84,7 +84,7 @@ use App\Produto;
                 <input class="searchTerm" placeholder="  O que você procura?" /><input class="searchButton" type="submit" />
                 </form>
 				  @foreach($menu as $m)
-                <li><a href="/test_ryan">{{$m->item_nome}}</a></li>
+                <li><a href="/{{$m->item_nome}}">{{$m->item_nome}}</a></li>
 				  @endforeach         
 			</ul>
 		</div>
