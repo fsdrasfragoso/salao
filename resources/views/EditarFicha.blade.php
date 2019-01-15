@@ -183,9 +183,7 @@ use Illuminate\Http\Request;
 								<span>(2 avaliações)</span>
 							</div>
 						</div>
-                         <div class="size-choose">
-						<a href="/editarFichaTecnica/{{$p->id}}" class="site-btn btn-line">Editar Ficha Tecnica</a>
-					</div>
+                        
 						@foreach($p->ficah_tecnica as $ficha)
                          <div class="size-choose">
 						<a href="/editarFichaTecnica/{{$ficha->id}}" class="site-btn btn-line">Editar Ficha Tecnica</a>
