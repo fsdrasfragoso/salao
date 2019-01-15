@@ -139,7 +139,54 @@ ol {
 -----------------------*/
 
 /* buttons */
+.myButton {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0);
+	background-color:#ffffff;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#252525;
+	font-family:Arial;
+	font-size:24px;
+	padding:1.5px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #404040;
+	text-transform: uppercase;
+    
+    position: relative;
+    z-index: 100;
+}
 
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton1 {
+	background-color:transparent;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:24px;
+	padding:1.5px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #404040;
+	text-transform: uppercase;
+    position: relative;
+    z-index: 100;
+}
+.myButton1:active {
+	position:relative;
+	top:1px;
+}
 .site-btn {
 	display: inline-block;
 	text-align: center;

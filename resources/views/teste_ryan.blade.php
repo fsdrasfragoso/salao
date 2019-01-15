@@ -140,7 +140,7 @@ use App\Produto;
 						<div class="product-info">
 							<h5>{{$p->nome}}</h5>
 							<p>R$ {{number_format($p->preco,2,",",".")}}</p>
-							<a href="product.html" class="site-btn btn-line">VER PRODUTO</a>
+							<a href="/produtoID/{{$p->id}}" class="site-btn btn-line">VER PRODUTO</a>
 						</div>
                     </div>
 				</li>
@@ -170,7 +170,7 @@ use App\Produto;
                 <div class="col-md-6">
 					<div class="featured-item">
 						<img src="{{$p->url}}" alt="">
-						<a href="#" class="site-btn">VER MAIS</a>
+						<a href="/produtoID/{{$p->id}}" class="site-btn">VER MAIS</a>
 					</div>
 				</div>
                 </a>
@@ -289,7 +289,7 @@ use App\Produto;
 				<div class="col-lg-5">
 					<div class="featured-item">
 						<img src="{{asset('css/img/OFERTA1.jpg')}}" alt="">
-						<a href="#" class="site-btn">Ver mais</a>
+						<a href="/produtoID/{{$p->id}}" class="site-btn">Ver mais</a>
 					</div>
 				</div>
 				<div class="col-lg-7">
