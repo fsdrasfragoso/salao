@@ -1,15 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 Route::get('/index', function () {
     return view('index');
@@ -40,6 +31,7 @@ Route::get('/CadastroMenu/apagar_item/{id}', 'Controlador_Menu_Superior@destroy'
 Route::get('/CadastroMenu/editar/{id}', 'Controlador_Menu_Superior@edit')->middleware(['auth']);
 Route::get('/editarFichaTecnica/{id}', 'FichaTecnicaController@edit')->middleware(['auth']);
 Route::post('/CadastroMenu/{id}', 'Controlador_Menu_Superior@update')->middleware(['auth']);
+Route::post('/alterarFicha/{id}', 'FichaTecnicaController@update')->middleware(['auth']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

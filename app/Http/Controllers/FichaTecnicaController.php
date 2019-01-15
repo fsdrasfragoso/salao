@@ -82,9 +82,13 @@ class FichaTecnicaController extends Controller
      * @param  \App\FichaTecnica  $fichaTecnica
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FichaTecnica $fichaTecnica)
+    public function update(Request $request, $id)
     {
-        //
+                  $ficha = FichaTecnica::find($id);
+         if (isset($ficha)) {
+                 $ficha->caracteristicas = $request->input('caracteristicas');    
+         }
+            
     }
 
     /**

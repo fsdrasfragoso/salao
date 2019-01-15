@@ -6,7 +6,7 @@
     <div class="card-body">
        
        
-        <form action="/alterarFicha" method="POST">
+        <form action="/alterarFicha/{{$ficha->id}}" method="POST">
             @csrf
             <input type="hidden" name="produto_id" value="{{$ficha->produto_id}}">
             <div class="form-group">
