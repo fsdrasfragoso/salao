@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
     </title>
 	<meta charset="UTF-8">
 	<meta name="description" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta name="keywords" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- icone -->   
@@ -354,12 +355,26 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 @endforeach
 	<!--====== Javascripts & Jquery ======-->
-	 <script src="{{ asset('js/app.js')}}" type="text/javascript"> </script> 
-	
+   
+    <script src="{{ asset('js/app.js')}}" type="text/javascript"></script> 
+        
+    <script type="text/javascript">
+    
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+        }
+    });
+    </script>     
+       
+	<script src="{{asset('js/js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>    
 	<script src="{{asset('js/js/owl.carousel.min.js')}}"></script>
 	<script src="{{asset('js/js/mixitup.min.js')}}"></script>
 	<script src="{{asset('js/js/sly.min.js')}}"></script>
-	
+	<script src="{{asset('js/js/jquery.nicescroll.min.js')}}"></script>
 	<script src="{{asset('js/js/main.js')}}"></script>
+        
+	 
     </body>
 </html>
