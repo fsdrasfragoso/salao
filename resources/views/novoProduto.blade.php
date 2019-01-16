@@ -43,7 +43,7 @@
                      <div class="form-group">
                         <label for="precoProduto" class="control-label">Porcentagem de Juros Sobres as Parcelas</label>
                         <div class="input-group">
-                            <input type="Float" class="form-control" id="precoProduto" placeholder="Ex: 10%(Não coloque o simbolo de porcentagem!)" name="preco">
+                            <input type="Float" class="form-control" id="precoProduto" placeholder="Ex: 10%(Não coloque o simbolo de porcentagem!)" name="juro">
                         </div>
                     </div>
                     <div class="form-group">

@@ -62,7 +62,7 @@ public function store(request $request){
             $prod->nome = $request->input('nome');
             $prod->preco = $request->input('preco');
             $prod->juro = $request->input('juro');
-            $prod->parcela = $request->input('parcela');
+            $prod->prestacao = $request->input('prestacao');
             $prod->destaque = $request->input('destaque');
             $prod->estoque = $request->input('estoque');
             $prod->classificacao = $request->input('classificacao');
