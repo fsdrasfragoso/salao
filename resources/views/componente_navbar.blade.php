@@ -24,6 +24,10 @@
         <a class="nav-link" href="/sl">Cadastro Nome do Sistema</a>
       </li>
         
+        
+       <li @if($current=="Funcionarios") class="nav-item active" @else class="nav-item" @endif>
+        <a class="nav-link" href="/funcionario">Funcionarios</a>
+      </li>
     </ul>
 
   </div>

@@ -9,16 +9,21 @@ Route::get('/index', function () {
 Route::get('/produtos', 'ControladorProduto@indexView')->middleware(['auth']);
 Route::get('/produto/{categoria_id}', 'ControladorProduto@produto')->middleware(['auth']);
 Route::get('/categorias', 'ControladorCategoria@index')->middleware(['auth']);
+Route::get('/funcionario', 'FuncionarioController@index')->middleware(['auth']);
 Route::get('/sl', 'SlController@index')->middleware(['auth']);
 Route::get('/categorias/novo', 'ControladorCategoria@create')->middleware(['auth']);
+Route::get('/funcionario/novo', 'FuncionarioController@create')->middleware(['auth']);
 Route::get('/sl/novo', 'SlController@create')->middleware(['auth']);
 Route::post('/categorias', 'ControladorCategoria@store')->middleware(['auth']);
+Route::post('/funcionario', 'FuncionarioController@store')->middleware(['auth']);
 Route::post('/sl', 'SlController@store')->middleware(['auth']);
 Route::get('/categorias/apagar/{id}', 'ControladorCategoria@destroy')->middleware(['auth']);
 Route::get('/sl/apagar/{id}', 'SlController@destroy')->middleware(['auth']);
 Route::get('/categorias/editar/{id}', 'ControladorCategoria@edit')->middleware(['auth']);
+Route::get('/funcionario/editar/{id}', 'FuncionarioController@edit')->middleware(['auth']);
 Route::get('/sl/editar/{id}', 'SlController@edit')->middleware(['auth']);
 Route::post('/categorias/{id}', 'ControladorCategoria@update')->middleware(['auth']);
+Route::post('/funcionario/{id}', 'FuncionarioController@update')->middleware(['auth']);
 Route::post('/sl/{id}', 'SlController@update')->middleware(['auth']);
 Route::get('/test', 'ControladorProduto@index')->middleware(['auth']);
 
