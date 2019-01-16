@@ -67,7 +67,7 @@ class FuncionarioController extends Controller
     {
         $func = Funcionario::find($id);
            if(isset($func)){
-               return view('editarFuncionario',compact($func));
+               return view('editarFuncionario',compact('func'));
            }
           return redirect('/funcionario');
     }
@@ -86,6 +86,7 @@ class FuncionarioController extends Controller
             $func->nome = $request->input('nome');
             $func->cpf = $request->input('cpf');
             $func->save();
+            return redirect('/funcionario');
         }
          return response('Funcionario Não encontrado', 404);
     }
