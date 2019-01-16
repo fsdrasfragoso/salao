@@ -140,6 +140,7 @@ use App\Produto;
 						<div class="product-info">
 							<h5>{{$p->nome}}</h5>
 							<p>R$ {{number_format($p->preco,2,",",".")}}</p>
+                             <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até 10x de: R$00.00)</strong></h6>
 							<a href="/produtoID/{{$p->id}}" class="site-btn btn-line">VER PRODUTO</a>
 						</div>
                     </div>
@@ -214,6 +215,7 @@ use App\Produto;
 						<div class="product-info">
 							<h6>{{$p->nome}}</h6>
 							<p>R${{number_format($p->preco,2,",",".")}}</p>
+                            <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até 10x de: R$00.00)</strong></h6>
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>
@@ -243,6 +245,7 @@ use App\Produto;
 						<div class="product-info">
 							<h6>{{$p->nome}}</h6>
 							<p>R${{number_format($p->preco,2,",",".")}}</p>
+                            <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até 10x de: R$00.00)</strong></h6>
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>
@@ -270,6 +273,7 @@ use App\Produto;
 						<div class="product-info">
 							<h6>{{$p->nome}}</h6>
 							<p>R${{number_format($p->preco,2,",",".")}}</p>
+                            <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até 10x de: R$00.00)</strong></h6>
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>

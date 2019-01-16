@@ -22,14 +22,30 @@
                             <input type="text" class="form-control" id="nomeProduto" placeholder="Nome do produtoproduto" name="nome">
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label for="precoProduto" class="control-label">Fornecedor:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="precoProduto" placeholder="Informe o Link do Fornecedor" name="link">
+                        </div>
+                    </div>       
                     <div class="form-group">
                         <label for="precoProduto" class="control-label">Preço</label>
                         <div class="input-group">
                             <input type="Float" class="form-control" id="precoProduto" placeholder="Preço do produto" name="preco">
                         </div>
                     </div>
-             
+                    <div class="form-group">
+                        <label for="precoProduto" class="control-label">Numero Maximo de Parcelas</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="prestacao" placeholder="INFORME A QUANTIDADE MAXIMA DE PARCELAS" name="prestacao">
+                        </div>
+                    </div> 
+                     <div class="form-group">
+                        <label for="precoProduto" class="control-label">Porcentagem de Juros Sobres as Parcelas</label>
+                        <div class="input-group">
+                            <input type="Float" class="form-control" id="precoProduto" placeholder="Ex: 10%(Não coloque o simbolo de porcentagem!)" name="preco">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="precoProduto" class="control-label">Colocar Produto em Destaque?</label>
                         <div class="input-group">

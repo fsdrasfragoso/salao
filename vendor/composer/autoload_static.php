@@ -457,6 +457,7 @@ class ComposerStaticInita8273c70226349bf9814b81f36689507
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\FichaTecnicaController' => __DIR__ . '/../..' . '/app/Http/Controllers/FichaTecnicaController.php',
         'App\\Http\\Controllers\\FileEntriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/FileEntriesController.php',
+        'App\\Http\\Controllers\\FuncionarioController' => __DIR__ . '/../..' . '/app/Http/Controllers/FuncionarioController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\ImagemController' => __DIR__ . '/../..' . '/app/Http/Controllers/ImagemController.php',
         'App\\Http\\Controllers\\PostControlador' => __DIR__ . '/../..' . '/app/Http/Controllers/PostControlador.php',

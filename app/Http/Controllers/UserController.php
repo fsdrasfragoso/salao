@@ -20,11 +20,14 @@ public function store(request $request){
     $prod = new Produto();
         $prod->nome = $request->input('nome');
             $prod->preco = $request->input('preco');
+            $prod->juro = $request->input('juro');
+            $prod->prestacao = $request->input('prestacao');
             $prod->destaque = $request->input('destaque');
             $prod->estoque = $request->input('estoque');
             $prod->classificacao = $request->input('classificacao');
             $prod->fabricacao = $request->input('fabricacao');
             $prod->validade = $request->input('validade');
+            $prod->link = $request->input('link');
             $prod->url = "storage/".$path;
             $prod->categoria_id = $request->input('categoria_id');
             $prod->save();
@@ -58,11 +61,14 @@ public function store(request $request){
         if (isset($prod)) {
             $prod->nome = $request->input('nome');
             $prod->preco = $request->input('preco');
+            $prod->juro = $request->input('juro');
+            $prod->parcela = $request->input('parcela');
             $prod->destaque = $request->input('destaque');
             $prod->estoque = $request->input('estoque');
             $prod->classificacao = $request->input('classificacao');
             $prod->fabricacao = $request->input('fabricacao');
             $prod->validade = $request->input('validade');
+            $prod->link = $request->input('link');
             $prod->url = "storage/".$path;
             $prod->categoria_id = $request->input('categoria_id');
             $prod->save();
