@@ -32,7 +32,7 @@ Route::get('/produtoID/{id}', 'ControladorProduto@showProd');
 Route::get('/CadastroMenu', 'Controlador_Menu_Superior@index')->middleware(['auth']);
 Route::get('/CadastroMenu/novo_item', 'Controlador_Menu_Superior@create')->middleware(['auth']); 
 Route::post('/CadastroMenu', 'Controlador_Menu_Superior@store')->middleware(['auth']);
-Route::get('/CadastroMenu/apagar_item/{id}', 'Controlador_Menu_Superior@destroy')->middleware(['auth']);
+Route::get('/CadastroMenu/apagar_item/{id}', 'Controlador_Menu_Superior@destroy')->middleware(['auth']);Route::post('/categorias', 'ControladorCategoria@store')->middleware(['auth']);
 Route::get('/CadastroMenu/editar/{id}', 'Controlador_Menu_Superior@edit')->middleware(['auth']);
 Route::get('/editarFichaTecnica/{id}', 'FichaTecnicaController@edit')->middleware(['auth']);
 Route::post('/CadastroMenu/{id}', 'Controlador_Menu_Superior@update')->middleware(['auth']);
@@ -81,3 +81,8 @@ Route::delete('/arquivos/{id}', 'PostControlador@destroy')->middleware(['auth'])
 Route::get('/arquivos/{id}', 'PostControlador@download')->middleware(['auth']);
 
 
+//Tipo Serviço
+
+Route::get('/TipoServico', 'TipoServicoController@index')->middleware(['auth']);
+Route::get('/TipoServico/novo', 'TipoServicoController@create')->middleware(['auth']);
+Route::post('/TipoServico', 'TipoServicoController@store')->middleware(['auth']);
