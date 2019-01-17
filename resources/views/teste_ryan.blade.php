@@ -140,11 +140,11 @@ function getparcela($Qp, $juro, $c){
 			<ul class="slidee">
 				@foreach($prod as $p)
                  @if($p->destaque==1)
-                <a href="/produtoID/{{$p->id}}">
+                
                 <li>
 					<div class="intro-item">
 						<figure>
-							<img src="{{$p->url}}" alt="#">
+							<img style=" height: 300px;" src="{{$p->url}}" alt="#">
 						</figure>
 						<div class="product-info">
 							<h5>{{$p->nome}}</h5>
@@ -158,7 +158,7 @@ function getparcela($Qp, $juro, $c){
 						</div>
                     </div>
 				</li>
-                    </a>
+                    
                  @endif
                  @endforeach
 			</ul>
@@ -213,7 +213,7 @@ function getparcela($Qp, $juro, $c){
                     
 					<div class="product-item">
 						<figure>
-							<img src="{{$p->url}}" alt="">
+							<img style="height: 300px;" src="{{$p->url}}" alt="">
 							<div class="pi-meta">
 								<a href="/produtoID/{{$p->id}}"><div class="pi-m-left">
 									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
@@ -247,7 +247,7 @@ function getparcela($Qp, $juro, $c){
                 <div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
-							<img src="{{$p->url}}" alt="">
+							<img style="height: 300px;" src="{{$p->url}}" alt="">
 							<div class="pi-meta">
 								<a href="/produtoID/{{$p->id}}"><div class="pi-m-left">
 									<img src="{{asset('css/img/icons/eye.png')}}" alt="">
@@ -279,7 +279,7 @@ function getparcela($Qp, $juro, $c){
                 <div class="mix col-lg-3 col-md-6 best">
 					<div class="product-item">
 						<figure>
-							<img src="{{$p->url}}" alt="">
+							<img style="height: 300px;" src="{{$p->url}}" alt="">
 							<div class="pi-meta">
 								<a href="/produtoID/{{$p->id}}"><div class="pi-m-left">
 									<img src="{{asset('css/img/icons/eye.png')}}" alt="">

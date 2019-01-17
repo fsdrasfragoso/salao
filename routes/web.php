@@ -43,7 +43,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
-Route::get('/shop', function () {
+Route::get('/SHOP', function () {
     return view('shop');
 });
 
@@ -57,7 +57,7 @@ Route::get('/', function () {
 
 Route::view('/upload', "upload")->middleware(['auth']);
 Route::view('/cart', "cart");
-Route::view('/servicos', "servicos");
+Route::view('/SERVIÇOS', "servicos");
 
 Route::view('/novoProduto', "novoProduto")->middleware(['auth']);
 //Route::view('/EditarFicha', "EditarFicha")->middleware(['auth']);

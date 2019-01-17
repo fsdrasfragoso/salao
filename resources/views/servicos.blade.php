@@ -7,7 +7,7 @@
 	<meta name="keywords" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->   
-	<link href="{{asset('css/img/logo%20a.png')}}" rel="shortcut icon"/>
+	<link href="../css/img/logo%20a.png" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -18,7 +18,6 @@
 	<link rel="stylesheet" href="{{asset('css/css/owl.carousel.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/css/style.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/css/animate.css')}}"/>
-	<link rel="stylesheet" href="{{asset('css/css/style_servicos.css')}}"/>
 
 	<!-->
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -26,7 +25,7 @@
 	<!-->
 
 </head>
-<body>
+<body><div class="todo">
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -39,7 +38,7 @@
 			<div class="site-logo">
                 
 <div class="logo">
-<th><span class="myButton">Salão de Beleza</span></th><th><span class="myButton1">Khaleesi</span></th>
+<th><span class="myButton" >Salão de Beleza</span></th><th><span class="myButton1">Khaleesi</span></th>
 </div>
 <br>
 			</div>
@@ -65,7 +64,7 @@
 	<div class="page-info-section page-info">
 		<div class="container">
 			<div class="site-breadcrumb">
-				<a href="#">Home</a> / 
+				<a href="#">Home</a>
 				<span>Serviços</span>
 			</div>
 			<img src="{{asset('css/img/page-info-art.png')}}" alt="" class="page-info-art">
@@ -110,8 +109,8 @@
     <!-- Page Content -->
 
       <!-- Marketing Icons Section -->
-      <div class="row" style="margin-top: 1%;">
-        <div class="col-lg-4 mb-4">
+      <div class="row" style="margin-top: 1%; margin-left: 17%;">
+        <div class="col-lg-3 mb-4">
           <div class="card h-100">
             <h4 class="card-header">Cabelereiro</h4>
             <div class="card-body">
@@ -126,7 +125,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-3 mb-4">
           <div class="card h-100">
             <h4 class="card-header">Maquiagem</h4>
             <div class="card-body">
@@ -139,7 +138,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-3 mb-4">
           <div class="card h-100">
             <h4 class="card-header">Manicure/Pedicure</h4>
             <div class="card-body">
@@ -154,7 +153,7 @@
       </div>
       <!-- /.row -->
 
-      <!-- Portfolio Section -->
+      <!-- Portfolio Section --><div class="portfolio">
       <h2>Conhaça Nosso Trabalho</h2>
 
       <div class="row">
@@ -194,7 +193,7 @@
       <!-- Features Section -->
       <div class="row">
         <div class="col-lg-6 text-dark">
-          <h2>Salão Dona Rosa</h2>
+          <h2>Salão Khaleesi</h2>
           <p>Moderno e Elegante. Te proporciona o melhor serviço da cidade.</p>
           <ul>
             <li>Matização dos fios  </li>
@@ -226,7 +225,7 @@
         </div>
       </div>
 
-    </div>
+            </div>
     <!-- /.container -->
 
     <!-- Footer -->
@@ -251,8 +250,7 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-8 col-sm-12">
 					<div class="footer-widget about-widget">
-<div class="logo">
-<th><span class="myButton">Salão de Beleza</span></th><th><span class="myButton1">Khaleesi</span></th>
+<div class="logo"><th><span class="myButton1">Khaleesi</span></th>
 </div>
 						<p>Breve descrição</p>
 						<div class="cards">
@@ -338,6 +336,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="{{ asset('js/js/mixitup.min.js')}}"></script>
 	<script src="{{ asset('js/js/sly.min.js')}}"></script>
 	<script src="{{ asset('js/js/jquery.nicescroll.min.js')}}"></script>
-	<script src="{{ asset('js/js/main.js')}}"></script>
+	<script src="{{ asset('js/js/main.js')}}"></script></div>
     </body>
 </html>

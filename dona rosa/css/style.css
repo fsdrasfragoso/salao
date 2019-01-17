@@ -56,7 +56,7 @@ h6 {
 p {
 	font-size: 14px;
 	color: #b4b4b4;
-	line-height: 2;
+	line-height: 1;
 }
 
 img {
@@ -611,7 +611,7 @@ ol {
 }
 
 .featured-item .site-btn {
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 	min-width: 162px;
 	padding: 23px 30px;
@@ -678,10 +678,12 @@ ol {
 	-o-transition: all 0.4s ease 0s;
 	transition: all 0.4s ease 0s;
 	position: relative;
+	
 }
 
 .product-item figure img {
 	min-width: 100%;
+	
 }
 
 .product-item figure:after {
@@ -738,6 +740,7 @@ ol {
 
 .product-item .pi-meta img {
 	min-width: auto;
+	
 }
 
 .product-item .pi-meta .pi-m-left {
@@ -1321,6 +1324,7 @@ ol {
 .cart-table .product-col img {
 	display: table-cell;
 	max-width: 187px;
+	
 }
 
 .cart-table .product-col .pc-title {
@@ -1477,7 +1481,7 @@ ol {
 }
 
 .cupon-input .site-btn {
-	position: absolute;
+	position: fixed;
 	right: 0;
 	top: 0;
 	height: 100%;
@@ -2035,6 +2039,7 @@ ol {
 	}
 	.cart-table .product-col img {
 		max-width: 110px;
+		
 	}
 	.cart-table .quy-input {
 		width: 135px;

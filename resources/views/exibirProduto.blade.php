@@ -237,7 +237,7 @@ function getparcela($Qp, $juro, $c){
 							<h6>{{$po[$i]->nome}}</h6>
 							<p>R${{number_format($po[$i]->preco,2,",",".")}}</p>
                             <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até 10x de: R$<?php
-                            echo number_format( getparcela($po[i]->prestacao,$po[i]->juro,$po[i]->preco),2,",",".");
+                            echo number_format( getparcela($po[$i]->prestacao,$po[$i]->juro,$po[$i]->preco),2,",",".");
                             
                             
                             ?>)</strong></h6>
