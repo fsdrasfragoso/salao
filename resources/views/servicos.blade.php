@@ -1,28 +1,60 @@
+<?php  
+
+use App\Sl;
+use App\Categoria;
+use App\Menu_Superior;
+use Illuminate\Http\Request;
+use App\Produto;
+  $sl = Sl::all(); 
+  $cat = Categoria::all();
+  $menu = Menu_Superior::all();
+  $prod = Produto::all(); 
+
+
+function getparcela($Qp, $juro, $c){
+    $i=$juro/100;
+    $t=1+$i;
+    $p = $c*((pow($t,$Qp)*$i)/(pow($t,$Qp)-1));
+        
+     return $p; 
+}
+?> 
+
 <!DOCTYPE html>
+
+
 <html lang="pt-br">
 <head>
-	<title>Serviços - Dona Rosa</title>
+	<title> 
+      @foreach($sl as $s)
+        {{$s->nome}}
+      @endforeach   - SHOP
+    </title>
 	<meta charset="UTF-8">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="The Plaza eCommerce Template">
+	<meta name="keywords" content="plaza, eCommerce, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}"> 
 	<!-- Favicon -->   
-	<link href="../css/img/logo%20a.png" rel="shortcut icon"/>
+	<link href="img/logo%20a.png" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 	<!-- Stylesheets -->
+    <link rel="stylesheet" href="css/css/style_servicos.css"/>
 	<link rel="stylesheet" href="{{asset('css/css/bootstrap.min.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/css/font-awesome.min.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/css/owl.carousel.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/css/style.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/css/animate.css')}}"/>
 
-	<!-->
+
+	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<!-->
+	<![endif]-->
 
 </head>
 <body><div class="todo">
@@ -32,28 +64,24 @@
 	</div>
 	
 	<!-- Header section -->
-	<header class="header-section header-normal" style="margin-top: -4.5%; height: 150px;" >
-		<div class="container-fluid ">
-			<!-- logo -->
-			<div class="site-logo">
-                
-<div class="logo">
-<th><span class="myButton" >Salão de Beleza</span></th><th><span class="myButton1">Khaleesi</span></th>
-</div>
-<br>
-			</div>
-			<!-- responsive -->
-			<div class="nav-switch"> 
-				<i class="fa fa-bars "></i>
+	<header class="header-section header-normal">
+		<div class="container-fluid">
+			 @foreach($sl as $s)
+            <!-- Logo -->
+			<div class="logo">
+<th><span class="myButton">SALÃO de Beleza </span></th><th><span class="myButton1">{{$s->nome}}</span></th>
+</div> <br/>
+			@endforeach
+            <!-- responsivo -->
+			<div class="nav-switch">
+				<i class="fa fa-bars"></i>
 			</div>
 			<!-- site menu -->
 			<ul class="main-menu">
 				<li><a href="index.html">Home</a></li>
-				<li><a href="shop.html">Shop</a></li>
-				<li><a href="servico.html">Serviços</a></li>
-                <li><a href="#">Blog</a></li>
-				<li><a href="#">Sobre Nós</a></li>
-				<li><a href="contact.html">Contato</a></li>
+				  @foreach($menu as $m)
+                <li><a href="/test_ryan">{{$m->item_nome}}</a></li>
+				  @endforeach         
 			</ul>
 		</div>
 	</header>
@@ -73,7 +101,8 @@
     
 	<!-- Page -->
     <br><br><br>
-    <center>  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:80%;"> 
+    <center>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:80%;" > 
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>

@@ -28,7 +28,7 @@ function getparcela($Qp, $juro, $c){
 	<title> 
       @foreach($sl as $s)
         {{$s->nome}}
-      @endforeach   
+      @endforeach   - SHOP
     </title>
 	<meta charset="UTF-8">
 	<meta name="description" content="The Plaza eCommerce Template">
