@@ -9,6 +9,15 @@ use App\Produto;
   $cat = Categoria::all();
   $menu = Menu_Superior::all();
   $prod = Produto::all(); 
+
+
+function getparcela($Qp, $juro, $c){
+    $i=$juro/100;
+    $t=1+$i;
+    $p = $c*((pow($t,$Qp)*$i)/(pow($t,$Qp)-1));
+        
+     return $p; 
+}
 ?> 
 
 
@@ -140,7 +149,11 @@ use App\Produto;
 						<div class="product-info">
 							<h5>{{$p->nome}}</h5>
 							<p>R$ {{number_format($p->preco,2,",",".")}}</p>
-                             <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até 10x de: R$00.00)</strong></h6>
+                              <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até {{$p->prestacao}}x de: R$<?php
+                            echo number_format( getparcela($p->prestacao,$p->juro,$p->preco),2,",",".");
+                            
+                            
+                            ?>)</strong></h6>
 							<a href="/produtoID/{{$p->id}}" class="site-btn btn-line">VER PRODUTO</a>
 						</div>
                     </div>
@@ -215,7 +228,11 @@ use App\Produto;
 						<div class="product-info">
 							<h6>{{$p->nome}}</h6>
 							<p>R${{number_format($p->preco,2,",",".")}}</p>
-                            <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até 10x de: R$00.00)</strong></h6>
+                             <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até {{$p->prestacao}}x de: R$<?php
+                            echo number_format( getparcela($p->prestacao,$p->juro,$p->preco),2,",",".");
+                            
+                            
+                            ?>)</strong></h6>
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>
@@ -245,7 +262,11 @@ use App\Produto;
 						<div class="product-info">
 							<h6>{{$p->nome}}</h6>
 							<p>R${{number_format($p->preco,2,",",".")}}</p>
-                            <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até 10x de: R$00.00)</strong></h6>
+                              <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até {{$p->prestacao}}x de: R$<?php
+                            echo number_format( getparcela($p->prestacao,$p->juro,$p->preco),2,",",".");
+                            
+                            
+                            ?>)</strong></h6>
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>
@@ -273,7 +294,11 @@ use App\Produto;
 						<div class="product-info">
 							<h6>{{$p->nome}}</h6>
 							<p>R${{number_format($p->preco,2,",",".")}}</p>
-                            <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até 10x de: R$00.00)</strong></h6>
+                             <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até {{$p->prestacao}}x de: R$<?php
+                            echo number_format( getparcela($p->prestacao,$p->juro,$p->preco),2,",",".");
+                            
+                            
+                            ?>)</strong></h6>
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>

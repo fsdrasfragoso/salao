@@ -14,7 +14,7 @@ class AddJurosTableProdutos extends Migration
     public function up()
     {
         Schema::table('produtos', function (Blueprint $table) {
-            $table->double('juro')->nullable()->after('preco')->default('10');
+            $table->double('juro')->nullable()->after('preco')->default('2');
         });
     }
 

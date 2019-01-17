@@ -7,7 +7,13 @@ use Illuminate\Http\Request;
   $sl = Sl::all(); 
   $cat = Categoria::all();
   $menu = Menu_Superior::all();
-
+function getparcela($Qp, $juro, $c){
+    $i=$juro/100;
+    $t=1+$i;
+    $p = $c*((pow($t,$Qp)*$i)/(pow($t,$Qp)-1));
+        
+     return $p;       
+}
 ?>
 
 <!DOCTYPE html>
@@ -136,7 +142,11 @@ use Illuminate\Http\Request;
 					<div class="product-content">
 						<h2>{{$p->nome}}</h2>
 						<div class="pc-meta">
-							<h4 class="price">R${{number_format($p->preco,2,",",".")}}</h4>
+							<h4 class="price">R${{number_format($p->preco,2,",",".")}}</h4>  <h6 style="color: #ff2340; font-size: 19px;"><strong>(ou em até {{$p->prestacao}}x de: R$<?php
+                            echo number_format( getparcela($p->prestacao,$p->juro,$p->preco),2,",",".");
+                            
+                            
+                            ?>)</strong></h6>
 							<div class="review">
 								@if($p->classificacao>=5)
                                 <div class="rating">
@@ -226,6 +236,11 @@ use Illuminate\Http\Request;
 						<div class="product-info">
 							<h6>{{$po[$i]->nome}}</h6>
 							<p>R${{number_format($po[$i]->preco,2,",",".")}}</p>
+                            <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até 10x de: R$<?php
+                            echo number_format( getparcela($po[i]->prestacao,$po[i]->juro,$po[i]->preco),2,",",".");
+                            
+                            
+                            ?>)</strong></h6>
 							<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
 						</div>
                         
@@ -257,6 +272,11 @@ use Illuminate\Http\Request;
 						<div class="product-info">
 							<h6>{{$po->nome}}</h6>
                             <p>R${{number_format($po->preco,2,",",".")}} <span><strike><?php $f = $po->preco *2.30; ?>R̶$̶{{number_format($f,2,",",".")}}</strike></span></p>
+                             <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até {{$po->prestacao}}x de: R$<?php
+                            echo number_format( getparcela($po->prestacao,$po->juro,$po->preco),2,",",".");
+                            
+                            
+                            ?>)</strong></h6>
 							<a href="#" class="site-btn btn-line">Adicionar ao carrinho</a>
 						</div>
 					</div>

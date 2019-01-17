@@ -9,6 +9,15 @@ use App\Produto;
   $cat = Categoria::all();
   $menu = Menu_Superior::all();
   $prod = Produto::all(); 
+
+
+function getparcela($Qp, $juro, $c){
+    $i=$juro/100;
+    $t=1+$i;
+    $p = $c*((pow($t,$Qp)*$i)/(pow($t,$Qp)-1));
+        
+     return $p; 
+}
 ?> 
 
 <!DOCTYPE html>
@@ -139,6 +148,11 @@ use App\Produto;
 						<div class="product-info">
 							<h6>{{$p->nome}}</h6>
 							<p>R${{number_format($p->preco,2,",",".")}}</p>
+                             <h6 style="color: #ff2340; font-size: 13px;"><strong>(ou em até {{$p->prestacao}}x de: R$<?php
+                            echo number_format( getparcela($p->prestacao,$p->juro,$p->preco),2,",",".");
+                            
+                            
+                            ?>)</strong></h6>
 							<a href="#" class="site-btn btn-line">ADICIONAR AO CARRINHO</a>
 						</div>
 					</div>
@@ -252,5 +266,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="{{ asset('js/js/sly.min.js')}}" type="text/javascript"></script>
 	<script src="{{ asset('js/js/jquery.nicescroll.min.js')}}" type="text/javascript"></script>
 	<script src="{{ asset('js/js/main.js')}}" type="text/javascript"></script>
+        
     </body>
 </html>
+    
+    
