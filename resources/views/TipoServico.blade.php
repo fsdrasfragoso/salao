@@ -22,8 +22,8 @@
                     <td>{{$t->descricao}}</td>
                     <td>{{$t->preco}}</td>
                     <td>
-                        <a href="/categorias/editar/{{$t->id}}" class="btn btn-sm btn-primary">Editar</a>
-                        <a href="/categorias/apagar/{{$t->id}}" class="btn btn-sm btn-danger">Apagar</a>
+                        <a href="/TipoServico/editar/{{$t->id}}" class="btn btn-sm btn-primary">Editar</a>
+                        <a href="/TipoServico/apagar/{{$t->id}}" class="btn btn-sm btn-danger">Apagar</a>
                     </td>
                 </tr>
     @endforeach                

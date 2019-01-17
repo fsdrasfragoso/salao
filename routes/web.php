@@ -86,3 +86,5 @@ Route::get('/arquivos/{id}', 'PostControlador@download')->middleware(['auth']);
 Route::get('/TipoServico', 'TipoServicoController@index')->middleware(['auth']);
 Route::get('/TipoServico/novo', 'TipoServicoController@create')->middleware(['auth']);
 Route::post('/TipoServico', 'TipoServicoController@store')->middleware(['auth']);
+Route::get('/TipoServico/editar/{id}', 'TipoServicoController@edit')->middleware(['auth']);
+Route::post('/TipoServico/{id}', 'TipoServicoController@update')->middleware(['auth']);

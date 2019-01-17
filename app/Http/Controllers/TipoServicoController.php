@@ -63,9 +63,13 @@ class TipoServicoController extends Controller
      * @param  \App\Tipo_Servico  $tipo_Servico
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tipo_Servico $tipo_Servico)
+    public function edit($id)
     {
-        //
+        $tipo = Tipo_Servico::find($id);
+        if(isset($tipo)){
+            return view('editarTipoServico', compact('tipo'));
+        }
+        return redirect('/TipoServico');
     }
 
     /**
@@ -75,9 +79,17 @@ class TipoServicoController extends Controller
      * @param  \App\Tipo_Servico  $tipo_Servico
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tipo_Servico $tipo_Servico)
+    public function update(Request $request, $id)
     {
-        //
+        $tipo = Tipo_Servico::find($id);
+        if(isset($tipo)){
+            $tipo->nome = $request->input('nome');
+            $tipo->descricao = $request->input('descricao');
+            $tipo->preco = $request->input('preco');
+            $tipo->save();
+            return redirect('\TipoServico');
+        }
+        return response('Serviço não encontrado', 404);
     }
 
     /**
