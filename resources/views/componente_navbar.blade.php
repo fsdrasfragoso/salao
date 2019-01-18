@@ -27,7 +27,11 @@
         
        <li @if($current=="Funcionarios") class="nav-item active" @else class="nav-item" @endif>
         <a class="nav-link" href="/funcionario">Funcionarios</a>
-      </li>
+       </li>
+        
+       <li @if($current=="TipoServico") class="nav-item active" @else class="nav-item" @endif>
+        <a class="nav-link" href="/TipoServico">Serviço</a>
+       </li>
     </ul>
 
   </div>
