@@ -98,8 +98,12 @@ class TipoServicoController extends Controller
      * @param  \App\Tipo_Servico  $tipo_Servico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tipo_Servico $tipo_Servico)
+    public function destroy($id)
     {
-        //
+        $tipo = Tipo_Servico::find($id);
+        if (isset($tipo)) {
+            $tipo->delete();
+        }
+        return redirect('/TipoServico');
     }
 }

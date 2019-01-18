@@ -88,3 +88,4 @@ Route::get('/TipoServico/novo', 'TipoServicoController@create')->middleware(['au
 Route::post('/TipoServico', 'TipoServicoController@store')->middleware(['auth']);
 Route::get('/TipoServico/editar/{id}', 'TipoServicoController@edit')->middleware(['auth']);
 Route::post('/TipoServico/{id}', 'TipoServicoController@update')->middleware(['auth']);
+Route::get('/TipoServico/apagar/{id}', 'TipoServicoController@destroy')->middleware(['auth']);

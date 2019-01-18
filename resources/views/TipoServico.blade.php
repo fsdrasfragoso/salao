@@ -10,7 +10,9 @@
             <thead>
                 <tr>
                     <th>Código</th>
-                    <th>Nome da Categoria</th>
+                    <th>Serviço</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
                     <th>Ações</th>
                 </tr>
             </thead>
