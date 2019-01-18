@@ -1,7 +1,6 @@
 <?php
 
 
-
 Route::get('/index', function () {
     return view('index');
 });
@@ -57,7 +56,7 @@ Route::get('/', function () {
 
 Route::view('/upload', "upload")->middleware(['auth']);
 Route::view('/cart', "cart");
-Route::view('/SERVIÇOS', "servicos");
+Route::view('/SERVICOS', "servicos");
 
 Route::view('/novoProduto', "novoProduto")->middleware(['auth']);
 //Route::view('/EditarFicha', "EditarFicha")->middleware(['auth']);

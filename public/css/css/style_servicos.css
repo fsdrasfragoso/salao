@@ -119,6 +119,8 @@ body {
     height: 30%;
     width: 80%;
 }
-.cab{
-    position: center;
+.inf{
+    width: 100%;
+    height: 30%;
+    background: black
 }

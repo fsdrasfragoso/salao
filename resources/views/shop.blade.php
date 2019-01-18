@@ -83,7 +83,7 @@ function getparcela($Qp, $juro, $c){
 			 @foreach($sl as $s)
             <!-- Logo -->
 			<div class="logo">
-<th><span class="myButton">SALÃO de Beleza </span></th><th><span class="myButton1">{{$s->nome}}</span></th>
+<th><a class="myButton" href="/SERVICOS">SALÃO de Beleza </a></th><th><a class="myButton1" href="/">{{$s->nome}}</a></th>
 </div> <br/>
 			@endforeach
             <!-- responsivo -->

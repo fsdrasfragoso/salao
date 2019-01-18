@@ -28,7 +28,7 @@ function getparcela($Qp, $juro, $c){
 	<title> 
       @foreach($sl as $s)
         {{$s->nome}}
-      @endforeach   - SHOP
+      @endforeach   - SERVIÇOS
     </title>
 	<meta charset="UTF-8">
 	<meta name="description" content="The Plaza eCommerce Template">
@@ -138,19 +138,18 @@ function getparcela($Qp, $juro, $c){
     <!-- Page Content -->
 
       <!-- Marketing Icons Section -->
-      <div class="row" style="margin-top: 1%;">
-        <div class="col-lg-3 mb-4  justify-content-center align-items-center">
-          <div class="card h-100">
+      <div class="row justify-content-center align-items-center " style="margin-top: 2%;">
+        <div class="col-lg-3 mb-4 ">
+          <div class="card">
             <h4 class="card-header">Cabelereiro</h4>
-            <div class="card-body">
+            <div class="card-body h-100">
               <p class="card-text">
                 Cortes<br>
                 Escovas<br>
-                Tratamento Capilar
                 </p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-dark">Saiba Mais</a>
+              <a href="#" class="btn btn-dark">Agendar Serviço</a>
             </div>
           </div>
         </div>
@@ -163,7 +162,7 @@ function getparcela($Qp, $juro, $c){
                 </p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-dark">Saiba Mais</a>
+              <a href="#" class="btn btn-dark">Agendar Serviço</a>
             </div>
           </div>
         </div>
@@ -171,18 +170,18 @@ function getparcela($Qp, $juro, $c){
           <div class="card h-100">
             <h4 class="card-header">Manicure/Pedicure</h4>
             <div class="card-body">
-              <p class="card-text">A nossa preocupação maior e primordial é a saúde de nossos clientes. Todos os instrumentos em aço utilizados nos procedimentos de manicure e pedicure são esterilizados em autoclaves próprias e visíveis aos clientes.
+              <p class="card-text">A nossa preocupação maior e primordial é a saúde de nossos clientes. 
                 </p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-dark">Saiba Mais</a>
+              <a href="#" class="btn btn-dark">Agendar Serviço</a>
             </div>
           </div>
         </div>
       </div>
       <!-- /.row -->
 
-      <!-- Portfolio Section --><div class="portfolio">
+      <!-- Portfolio Section --><div class="portfolio" style="margin-left: 10%">
       <h2>Conhaça Nosso Trabalho</h2>
 
       <div class="row">
