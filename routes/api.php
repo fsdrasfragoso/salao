@@ -20,5 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/categorias', 'ControladorCategoria@indexJson');
 
 Route::resource('/produtos', 'ControladorProduto');
+Route::post('/funcionario', 'FuncionarioController@store');
 
-Route::get('/editarproduto/{id}', "UserController@edit");
+//Route::get('/editarproduto/{id}', "UserController@edit");
