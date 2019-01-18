@@ -14,9 +14,24 @@ use App\Produto;
 function getparcela($Qp, $juro, $c){
     $i=$juro/100;
     $t=1+$i;
-    $p = $c*((pow($t,$Qp)*$i)/(pow($t,$Qp)-1));
+    $k = pow($t,$Qp)-1;
+    if(is_numeric($k)){
+    if($k!=0 or $juro!=0 or $Qp!=0){
+    $p = $c*((pow($t,$Qp)*$i)/( $k == 0 ? 1 : $k ));
         
-     return $p; 
+     return $p;
+    }else if($Qp != 0){
+        $p = $c / $Qp;
+        return $p;
+    }else{
+        $p = $c/10; 
+        return $p;
+    }
+    }else{
+          $p = $c/10; 
+          return $p;  
+    }
+
 }
 ?> 
 

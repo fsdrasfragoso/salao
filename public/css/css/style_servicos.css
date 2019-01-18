@@ -7,10 +7,12 @@
 body {
 }
 
-@media (min-width: 992px) {
+@media (min-width: 600px) {
   body {
-    padding-top: 56px;
   }
+    .row{
+        margin-left: -17%;
+    }
 }
 
 @media only screen and (max-width: 576px) {
@@ -116,4 +118,7 @@ body {
 .portfolio{
     height: 30%;
     width: 80%;
+}
+.cab{
+    position: center;
 }

@@ -138,8 +138,8 @@ function getparcela($Qp, $juro, $c){
     <!-- Page Content -->
 
       <!-- Marketing Icons Section -->
-      <div class="row" style="margin-top: 1%; margin-left: 17%;">
-        <div class="col-lg-3 mb-4">
+      <div class="row" style="margin-top: 1%;">
+        <div class="col-lg-3 mb-4  justify-content-center align-items-center">
           <div class="card h-100">
             <h4 class="card-header">Cabelereiro</h4>
             <div class="card-body">
