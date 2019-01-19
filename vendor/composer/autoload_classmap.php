@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Admin' => $baseDir . '/app/Admin.php',
+    'App\\BanerPS' => $baseDir . '/app/BanerPS.php',
     'App\\Categoria' => $baseDir . '/app/Categoria.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -30,6 +31,7 @@ return array(
     'App\\Http\\Controllers\\ImagemController' => $baseDir . '/app/Http/Controllers/ImagemController.php',
     'App\\Http\\Controllers\\PostControlador' => $baseDir . '/app/Http/Controllers/PostControlador.php',
     'App\\Http\\Controllers\\SlController' => $baseDir . '/app/Http/Controllers/SlController.php',
+    'App\\Http\\Controllers\\TipoServicoController' => $baseDir . '/app/Http/Controllers/TipoServicoController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',

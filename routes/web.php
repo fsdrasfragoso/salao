@@ -88,3 +88,20 @@ Route::post('/TipoServico', 'TipoServicoController@store')->middleware(['auth'])
 Route::get('/TipoServico/editar/{id}', 'TipoServicoController@edit')->middleware(['auth']);
 Route::post('/TipoServico/{id}', 'TipoServicoController@update')->middleware(['auth']);
 Route::get('/TipoServico/apagar/{id}', 'TipoServicoController@destroy')->middleware(['auth']);
+
+
+
+
+//Banner da Pagina Serviço! 
+
+Route::get('/bannerS', 'BanerPSController@index')->middleware(['auth']);
+Route::get('/bannerS/novo', 'BanerPSController@create')->middleware(['auth']);
+Route::post('/bannerS', 'BanerPSController@store')->middleware(['auth']);
+Route::get('/bannerS/apagar/{id}', 'BanerPSController@destroy')->middleware(['auth']);
+
+
+
+
+
+
+

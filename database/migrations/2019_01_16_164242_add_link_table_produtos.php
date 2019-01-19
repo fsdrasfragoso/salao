@@ -14,7 +14,7 @@ class AddLinkTableProdutos extends Migration
     public function up()
     {
         Schema::table('produtos', function (Blueprint $table) {
-     $table->string('link')->nullable()->after('url')->default('https://mercadolivre.com.br/'); // Ordenado após a coluna "url"
+     $table->text('link')->nullable()->after('url')->default('https://mercadolivre.com.br/'); // Ordenado após a coluna "url"
              $table->integer('prestacao')->nullable()->after('preco')->default('10'); // Ordenado após a coluna "preco"
         });
     }

@@ -32,6 +32,10 @@
        <li @if($current=="TipoServico") class="nav-item active" @else class="nav-item" @endif>
         <a class="nav-link" href="/TipoServico">Serviço</a>
        </li>
+        
+        <li @if($current=="BannerS") class="nav-item active" @else class="nav-item" @endif>
+        <a class="nav-link" href="/bannerS">Banner Pagina Serviço</a>
+       </li>
     </ul>
 
   </div>

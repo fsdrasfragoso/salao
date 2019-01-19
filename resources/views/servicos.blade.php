@@ -5,11 +5,12 @@ use App\Categoria;
 use App\Menu_Superior;
 use Illuminate\Http\Request;
 use App\Produto;
+use App\BanerPS;
   $sl = Sl::all(); 
   $cat = Categoria::all();
   $menu = Menu_Superior::all();
   $prod = Produto::all(); 
-
+  $banner = BanerPS::all();
 
 function getparcela($Qp, $juro, $c){
     $i=$juro/100;
@@ -101,29 +102,44 @@ function getparcela($Qp, $juro, $c){
     
 	<!-- Page -->
     <br><br><br>
+  <?php if(count($banner)>0){ 
+      $i = 0;
+    ?>
     <center>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:80%;" > 
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <?php foreach($banner as $b){
+                   if($i==0){
+            ?>
+            
+          <li data-target="#carouselExampleIndicators" data-slide-to="{{$i}}" class="active"></li>
+            <?php  }else{ ?>
+          <li data-target="#carouselExampleIndicators" data-slide-to="{{$i}}"></li>
+         <?php }$i++; } ?>
+
+            
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url(css/img/servises/xservicos-pms-salao-de-beleza.jpg.pagespeed.ic.US5vXMPosm.jpg)">
+          <?php 
+               $i=0;
+             foreach($banner as $b){
+                   if($i==0){
+            ?>
+            <div class="carousel-item active" style="background-image: url({{$b->url}})">
             <div class="carousel-caption d-none d-md-block">
             </div>
+                 
           </div>
+            <?php  }else{ ?>
           <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url(css/img/servises/maxresdefault.jpg)">
+          <div class="carousel-item" style="background-image: url({{$b->url}})">
             <div class="carousel-caption d-none d-md-block">
             </div>
           </div>
+             <?php }$i++; } ?>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url(css/img/servises/manicure-profissional.jpg)">
-            <div class="carousel-caption d-none d-md-block">
-            </div>
-          </div>
+          
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -134,7 +150,9 @@ function getparcela($Qp, $juro, $c){
           <span class="sr-only">Next</span>
         </a>
       </div>
- </center> 
+ </center>
+    <?php } ?>
+
     <!-- Page Content -->
 
       <!-- Marketing Icons Section -->
@@ -265,8 +283,7 @@ function getparcela($Qp, $juro, $c){
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
 
 
 	<!-- Page end -->
@@ -357,7 +374,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="{{ asset('js/js/app.js')}}" type="text/javascript"> </script> 
+	<script src="{{ asset('js/app.js')}}" type="text/javascript"> </script> 
 	<script src="{{ asset('js/js/jquery-3.2.1.min.js')}}"></script>
 	<script src="{{ asset('js/js/bootstrap.min.js')}}"></script>
 	<script src="{{ asset('js/js/owl.carousel.min.js')}}"></script>
