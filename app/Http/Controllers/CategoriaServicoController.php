@@ -14,7 +14,8 @@ class CategoriaServicoController extends Controller
      */
     public function index()
     {
-        //
+        $cats = CategoriaServico::all();
+        return view('categoria_servico', compact('cats'));
     }
 
     /**
@@ -24,7 +25,7 @@ class CategoriaServicoController extends Controller
      */
     public function create()
     {
-        //
+       return view('novacategoria_servico');
     }
 
     /**
@@ -35,7 +36,11 @@ class CategoriaServicoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $cats = new CategoriaServico();
+        
+        $cats->nome = $request->input('nome');
+        $cats->save();
+        return redirect('/categorias_servicos');
     }
 
     /**
@@ -55,9 +60,15 @@ class CategoriaServicoController extends Controller
      * @param  \App\CategoriaServico  $categoriaServico
      * @return \Illuminate\Http\Response
      */
-    public function edit(CategoriaServico $categoriaServico)
+    public function edit($id)
     {
-        //
+        $cat = CategoriaServico::find($id);
+        
+          if(isset($cat){
+              return view('editarcategoria_servico',compact('cat'));
+          }
+          
+        return redirec('/categorias_servicos');
     }
 
     /**
@@ -67,9 +78,10 @@ class CategoriaServicoController extends Controller
      * @param  \App\CategoriaServico  $categoriaServico
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CategoriaServico $categoriaServico)
+    public function update(Request $request, $id)
     {
-        //
+        $cat = CategoriaServico::find($id);
+         
     }
 
     /**

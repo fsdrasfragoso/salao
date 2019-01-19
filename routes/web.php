@@ -97,7 +97,16 @@ Route::get('/TipoServico/apagar/{id}', 'TipoServicoController@destroy')->middlew
 Route::get('/bannerS', 'BanerPSController@index')->middleware(['auth']);
 Route::get('/bannerS/novo', 'BanerPSController@create')->middleware(['auth']);
 Route::post('/bannerS', 'BanerPSController@store')->middleware(['auth']);
-Route::get('/bannerS/apagar/{id}', 'BanerPSController@destroy')->middleware(['auth']);
+Route::get('/bannerS/apagar/{id}', 'BanerPSController@destroy')->middleware(['auth']);  
+
+
+//Categoria Serviços
+
+Route::get('/categorias_servicos', 'CategoriaServicoController@index')->middleware(['auth']);
+Route::get('/categorias_servicos/novo', 'CategoriaServicoController@create')->middleware(['auth']);
+Route::post('/categorias_servicos', 'CategoriaServicoController@store')->middleware(['auth']);
+Route::get('/categorias_servicos/apagar/{id}', 'CategoriaServicoController@destroy')->middleware(['auth']);
+Route::post('/categorias_servicos/{id}', 'ategoriaServicoController@update')->middleware(['auth']);
 
 
 
