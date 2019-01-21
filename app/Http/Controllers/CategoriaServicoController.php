@@ -64,12 +64,12 @@ class CategoriaServicoController extends Controller
     {
         $cat = CategoriaServico::find($id);
         
-          if(isset($cat){
+          if(isset($cat)){
               return view('editarcategoria_servico',compact('cat'));
           }
           
         return redirec('/categorias_servicos');
-    }
+             }
 
     /**
      * Update the specified resource in storage.
@@ -81,6 +81,12 @@ class CategoriaServicoController extends Controller
     public function update(Request $request, $id)
     {
         $cat = CategoriaServico::find($id);
+                  if(isset($cat)){
+                      $cat->nome =  $request->input('nome');
+                       $cat->save();
+                      return redirect('/categorias_servicos');
+                  }
+     return response('Categoria de Serviço não encontrada', 404);
          
     }
 
@@ -90,8 +96,17 @@ class CategoriaServicoController extends Controller
      * @param  \App\CategoriaServico  $categoriaServico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CategoriaServico $categoriaServico)
+    public function destroy($id)
     {
-        //
+         $cat = CategoriaServico::find($id);
+        
+        if(isset($cat)){
+                      $cat->delete();
+                      return redirect('/categorias_servicos');
+                  }
+     return response('Categoria de Serviço não encontrada', 404);
+        
+        
     }
 }
+             

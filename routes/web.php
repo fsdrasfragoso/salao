@@ -106,7 +106,8 @@ Route::get('/categorias_servicos', 'CategoriaServicoController@index')->middlewa
 Route::get('/categorias_servicos/novo', 'CategoriaServicoController@create')->middleware(['auth']);
 Route::post('/categorias_servicos', 'CategoriaServicoController@store')->middleware(['auth']);
 Route::get('/categorias_servicos/apagar/{id}', 'CategoriaServicoController@destroy')->middleware(['auth']);
-Route::post('/categorias_servicos/{id}', 'ategoriaServicoController@update')->middleware(['auth']);
+Route::post('/categorias_servicos/{id}', 'CategoriaServicoController@update')->middleware(['auth']);
+Route::get('/categorias_servicos/editar/{id}', 'CategoriaServicoController@edit')->middleware(['auth']);
 
 
 
