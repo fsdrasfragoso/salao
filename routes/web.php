@@ -46,7 +46,10 @@ Route::get('/SHOP', function () {
     return view('shop');
 });
 
-
+Route::view('/SERVIÇOS', "servicos");
+//Route::view('/CONTATO', "contato");
+//Route::view('/SOBRE NÓS', "sobre_nos");
+//Route::view('/BLOG', "blog");
 
 
 Route::get('/', function () {

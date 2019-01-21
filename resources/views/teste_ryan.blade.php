@@ -54,7 +54,7 @@ function getparcela($Qp, $juro, $c){
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="csrf-token" content="{{ csrf_token() }}">  
 	<!-- icone -->   
-	<link href="img/logo%20a.png" rel="shortcut icon"/>
+	<link href="../css/img/logo%20a.png" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
     

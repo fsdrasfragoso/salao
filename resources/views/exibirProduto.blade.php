@@ -92,10 +92,10 @@ function getparcela($Qp, $juro, $c){
 			<!-- site menu -->
 			@if(count($menu)>0)
             <ul class="main-menu">
-				<li><a href="index.html">Home</a></li>
+				<li><a href="/">Home</a></li>
                 @foreach($menu as $m)
              
-				<li><a href="{{$m->item_nome}}">{{$m->item_nome}}</a></li>
+				<li><a href="/{{$m->item_nome}}">{{$m->item_nome}}</a></li>
 			     @endforeach  
 			</ul>
             @else

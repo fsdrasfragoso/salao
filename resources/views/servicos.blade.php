@@ -38,7 +38,7 @@ function getparcela($Qp, $juro, $c){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}"> 
 	<!-- Favicon -->   
-	<link href="img/logo%20a.png" rel="shortcut icon"/>
+	<link href="../css/img/logo%20a.png" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -81,7 +81,7 @@ function getparcela($Qp, $juro, $c){
 			<ul class="main-menu">
 				<li><a href="index.html">Home</a></li>
 				  @foreach($menu as $m)
-                <li><a href="/test_ryan">{{$m->item_nome}}</a></li>
+                <li><a href="/{{$m->item_nome}}">{{$m->item_nome}}</a></li>
 				  @endforeach         
 			</ul>
 		</div>
