@@ -119,9 +119,11 @@ function getparcela($Qp, $juro, $c){
 	<!-- Seção do Slide -->
                                                 
 	<section class="hero-section set-bg" data-setbg="{{asset('css/img/bg1.jpg')}}">
+
+
 		<div class="hero-slider owl-carousel">
-			<div class="hs-item">                <!-- IMG DE 1036x846 -->
-				<div class="hs-left"><img src="{{asset('css/img/slider-img.png')}}" alt=""></div>
+			<div class="hs-item">              <!-- IMG DE 1036x846 -->
+				<div class="hs-left"><img src="{{asset('')}}" alt=""></div>
 				<div class="hs-right">
 					<div class="hs-content">
 						<div class="price">Ouse inovar!</div>
@@ -130,8 +132,8 @@ function getparcela($Qp, $juro, $c){
 					</div>	
 				</div>
 			</div>
-			<div class="hs-item">                <!-- IMG DE 1036x846 -->
-				<div class="hs-left"><img src="{{asset('css/img/slider-img.png')}}" alt=""></div>
+			<div class="hs-item">              <!-- IMG DE 1036x846 -->
+				<div class="hs-left"><img src="{{asset('')}}" alt=""></div>
 				<div class="hs-right">
 					<div class="hs-content">
 						<div class="price">AAAAAA</div>

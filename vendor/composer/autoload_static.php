@@ -440,6 +440,7 @@ class ComposerStaticInita8273c70226349bf9814b81f36689507
     public static $classMap = array (
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\BanerPS' => __DIR__ . '/../..' . '/app/BanerPS.php',
+        'App\\BannerPaginaPrincipal' => __DIR__ . '/../..' . '/app/BannerPaginaPrincipal.php',
         'App\\Categoria' => __DIR__ . '/../..' . '/app/Categoria.php',
         'App\\CategoriaServico' => __DIR__ . '/../..' . '/app/CategoriaServico.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
