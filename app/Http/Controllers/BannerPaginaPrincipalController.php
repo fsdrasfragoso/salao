@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BannerPaginaPrincipal;
 use Illuminate\Http\Request;
-
+use Storage;
 class BannerPaginaPrincipalController extends Controller
 {
     /**
@@ -14,7 +14,9 @@ class BannerPaginaPrincipalController extends Controller
      */
     public function index()
     {
-        //
+        $banner = BannerPaginaPrincipal::all();
+        
+         return view('bannerPP', compact('banner'));
     }
 
     /**
@@ -24,7 +26,7 @@ class BannerPaginaPrincipalController extends Controller
      */
     public function create()
     {
-        //
+        return view('novobannerPP');
     }
 
     /**
@@ -35,7 +37,40 @@ class BannerPaginaPrincipalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $p = $request->file('url');
+        if(isset($p)){
+            $path=$request->file('url')->store('/public'); 
+    
+        $novo = "public/".$path;
+        Storage::move($path, $novo);
+            
+            $banner = new BannerPaginaPrincipal();
+            
+            $banner->titulo=$request->input('titulo');
+            $banner->slogan=$request->input('slogan');
+            $banner->descricao=$request->input('descricao');
+            $banner->url = 'storage/'.$path;
+            $banner->link=$request->input('link');
+            $banner->butaao=$request->input('butaao');
+            $banner->save();
+            
+            return redirect('/bannerPP');
+             
+            
+        }else{
+            $banner = new BannerPaginaPrincipal();
+            
+            $banner->titulo=$request->input('titulo');
+            $banner->slogan=$request->input('slogan');
+            $banner->descricao=$request->input('descricao');
+            $banner->url = '';
+            $banner->link=$request->input('link');
+            $banner->butaao=$request->input('butaao');
+            $banner->save();
+            
+            return redirect('/bannerPP');
+        }
+       
     }
 
     /**

@@ -113,6 +113,17 @@ Route::post('/categorias_servicos/{id}', 'CategoriaServicoController@update')->m
 Route::get('/categorias_servicos/editar/{id}', 'CategoriaServicoController@edit')->middleware(['auth']);
 
 
+//Banner Pagina Principal
+
+Route::get('/bannerPP', 'BannerPaginaPrincipalController@index')->middleware(['auth']);
+Route::get('/bannerPP/novo', 'BannerPaginaPrincipalController@create')->middleware(['auth']);
+Route::post('/bannerPP', 'BannerPaginaPrincipalController@store')->middleware(['auth']);
+Route::get('/bannerPP/apagar/{id}', 'BannerPaginaPrincipalController@destroy')->middleware(['auth']);
+Route::post('/bannerPP/{id}', 'BannerPaginaPrincipalController@update')->middleware(['auth']);
+Route::get('/bannerPP/editar/{id}', 'BannerPaginaPrincipalController@edit')->middleware(['auth']);
+
+
+
 
 
 

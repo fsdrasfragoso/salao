@@ -36,8 +36,13 @@
         <li @if($current=="BannerS") class="nav-item active" @else class="nav-item" @endif>
         <a class="nav-link" href="/bannerS">Banner Pagina Serviço</a>
        </li>
+        
         <li @if($current=="categorias_servicos") class="nav-item active" @else class="nav-item" @endif>
         <a class="nav-link" href="/categorias_servicos">Categorias de Serviços</a>
+       </li>
+        
+        <li @if($current=="BannerPP") class="nav-item active" @else class="nav-item" @endif>
+        <a class="nav-link" href="/bannerPP">Banner Principal</a>
        </li>
     </ul>
 
