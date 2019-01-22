@@ -5,11 +5,12 @@ use App\Categoria;
 use App\Menu_Superior;
 use Illuminate\Http\Request;
 use App\Produto;
+use App\BannerPaginaPrincipal; 
   $sl = Sl::all(); 
   $cat = Categoria::all();
   $menu = Menu_Superior::all();
   $prod = Produto::all(); 
-
+  $banner = BannerPaginaPrincipal::all();
 
 function getparcela($Qp, $juro, $c){
     $i=$juro/100;
@@ -117,35 +118,27 @@ function getparcela($Qp, $juro, $c){
 
 
 	<!-- Seção do Slide -->
-                                                
+           @if(count($banner)>0)                                     
 	<section class="hero-section set-bg" data-setbg="{{asset('css/img/bg1.jpg')}}">
 
-
+             
 		<div class="hero-slider owl-carousel">
-			<div class="hs-item">              <!-- IMG DE 1036x846 -->
-				<div class="hs-left"><img src="{{asset('')}}" alt=""></div>
+			@foreach($banner as $b)
+            <div class="hs-item">              <!-- IMG DE 1036x846 -->
+				<div class="hs-left"><img src="{{$b->url}}" alt="" ></div>
 				<div class="hs-right">
 					<div class="hs-content">
-						<div class="price">Ouse inovar!</div>
-						<h2><span style="font-size: 28px">Melhores produtos</span> <br>Melhores serviços</h2>
-						<h4 class="site-btn"><a href="#">Compre agora!</a></h4>
+						<div class="price">{{$b->titulo}}</div>
+						<h2><span style="font-size: 28px">{{$b->slogan}}</span> <br>{{$b->descricao}}</h2>
+						<h4 class="site-btn"><a href="{{$b->link}}">{{$b->butaao}}</a></h4>
 					</div>	
 				</div>
 			</div>
-			<div class="hs-item">              <!-- IMG DE 1036x846 -->
-				<div class="hs-left"><img src="{{asset('')}}" alt=""></div>
-				<div class="hs-right">
-					<div class="hs-content">
-						<div class="price">AAAAAA</div>
-						<h2><span>BBBB</span> <br>CCCC</h2>
-						<a href="" class="site-btn">DDDDD</a>
-					</div>	
-				</div>
-			</div>
+@endforeach			
 		</div>
 	</section>
 	<!-- Hero section end -->
-
+      @endif
 	
 	<!-- Intro section -->
 	<section class="intro-section spad pb-0">

@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 use Storage;
 class BannerPaginaPrincipalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    function transparent_background($filename, $color)
+{
+    
+}
     public function index()
     {
         $banner = BannerPaginaPrincipal::all();
@@ -43,6 +42,8 @@ class BannerPaginaPrincipalController extends Controller
     
         $novo = "public/".$path;
         Storage::move($path, $novo);
+            
+            //transparent_background($novo, '255,255,255');
             
             $banner = new BannerPaginaPrincipal();
             
