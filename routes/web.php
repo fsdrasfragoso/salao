@@ -24,7 +24,7 @@ Route::get('/sl/editar/{id}', 'SlController@edit')->middleware(['auth']);
 Route::post('/categorias/{id}', 'ControladorCategoria@update')->middleware(['auth']);
 Route::post('/funcionario/{id}', 'FuncionarioController@update')->middleware(['auth']);
 Route::post('/sl/{id}', 'SlController@update')->middleware(['auth']);
-Route::get('/test', 'ControladorProduto@index')->middleware(['auth']);
+//Route::get('/test', 'ControladorProduto@index')->middleware(['auth']);
 
 Route::get('/produtoID/{id}', 'ControladorProduto@showProd');
 
@@ -60,6 +60,7 @@ Route::get('/', function () {
 Route::view('/upload', "upload")->middleware(['auth']);
 Route::view('/cart', "cart");
 Route::view('/SERVICOS', "servicos");
+Route::view('/test', "teste");
 
 Route::view('/novoProduto', "novoProduto")->middleware(['auth']);
 //Route::view('/EditarFicha', "EditarFicha")->middleware(['auth']);

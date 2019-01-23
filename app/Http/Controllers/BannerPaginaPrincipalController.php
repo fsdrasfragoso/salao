@@ -43,7 +43,7 @@ class BannerPaginaPrincipalController extends Controller
         $novo = "public/".$path;
         Storage::move($path, $novo);
             
-            //transparent_background($novo, '255,255,255');
+           
             
             $banner = new BannerPaginaPrincipal();
             
